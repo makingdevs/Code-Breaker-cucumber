@@ -17,9 +17,9 @@ describe CodeBreaker do
             play = CodeBreaker.new("7519")
             expect(play.try("9517")).to eq "XX__"
         end
-        it "guess 9817 and return X_" do
+        it "guess 9817 and return XX_" do
             play = CodeBreaker.new("7519")
-            expect(play.try("9817")).to eq "X_"
+            expect(play.try("9817")).to eq "XX_"
         end
         it "guess 9518 and return X__" do
             play = CodeBreaker.new("7519")
