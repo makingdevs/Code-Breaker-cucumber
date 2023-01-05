@@ -1,8 +1,9 @@
 class CodeBreaker
   def initialize(result)
-    @result = result
+    @result = result.chars
   end
   def try(guess)
-    "XX"
+    digits = @result.intersection(guess.chars)
+    digits.collect {|n| @result.index(n) == guess.chars.index(n) ? "_" : "X"}.join
   end
 end
