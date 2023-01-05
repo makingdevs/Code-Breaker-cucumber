@@ -4,6 +4,6 @@ class CodeBreaker
   end
   def try(guess)
     digits = @result.intersection(guess.chars)
-    digits.collect {|n| @result.index(n) == guess.chars.index(n) ? "_" : "X"}.join
+    digits.collect {|n| @result.index(n) == guess.chars.index(n) ? "_" : "X"}.sort.join
   end
 end
