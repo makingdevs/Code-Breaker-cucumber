@@ -5,16 +5,17 @@ require_relative 'lib/code_breaker.rb'
 class MyApp < Sinatra::Base
   enable :sessions
   get '/' do
-    result = session[:result]
+    result = session[:result]&.last
     guess = result[:guess] unless result.nil?
     win = result[:win] unless result.nil?
-    erb :index, :locals => {:guess => guess, :win => win}
+    erb :index, :locals => { :guess => guess, :win => win, :results => session[:result] }
   end
   post '/' do
     play = CodeBreaker.new("7519")
     guess = play.try(params[:guess])
     win = play.win
-    result = {:guess => guess, :win => win}
+    result = session[:result] ? session[:result] : []
+    result << {:guess => guess, :attemp => params[:guess], :win => win}
     session[:result] = result
     redirect '/'
   end

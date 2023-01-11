@@ -10,9 +10,14 @@
     <input type="text" id="input" name="guess"><br>
     <input type="submit" id="guess" value="Guess">
   </form>
-  <% if guess %>
+  <% if results %>
     <p id="output"><%= guess %></p>
     <p id="message"><%= win ? 'You win!' : 'Try again!' %>
+    <ul id="results">
+    <% results.each do |result|%>
+      <li><%= "#{result[:attemp]} - #{result[:guess]}" %></li>
+    <% end %>
+    </ul>
   <% end %>
 </body>
 </html>
