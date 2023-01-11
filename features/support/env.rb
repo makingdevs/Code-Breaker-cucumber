@@ -1,5 +1,32 @@
 require 'rubygems'
 require 'selenium-cucumber'
+require 'sinatra'
+require 'webrat'
+require 'rack/test'
+
+require File.join(File.dirname(__FILE__), '../../', 'myapp.rb')
+
+Webrat.configure do |config|
+  # config.mode = :rack
+  config.mode = :selenium
+  config.application_port = 4567
+  config.application_framework = :sinatra
+end
+
+class WebratMixinExample
+  include Rack::Test::Methods
+  include Webrat::Methods
+  include Webrat::Matchers
+
+  Webrat::Methods.delegate_to_session :response_code, :response_body
+
+  def app
+    # Sinatra::Application
+    Main     
+  end
+end
+
+World{WebratMixinExample.new}
 
 # Store command line arguments
 $browser_type = ENV['BROWSER'] || 'ff'
