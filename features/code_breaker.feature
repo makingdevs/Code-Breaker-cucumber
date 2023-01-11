@@ -29,5 +29,5 @@ Guess the number in the game
         When I enter "0123" into input field having id "input"
         And I click on element having id "guess"
         Then element having id "output" should have text as "X"
-        And element having id "results" should have text as "1094 - XX"
-        And element having id "results" should have text as "0123 - X"
+        And element having id "results" should have partial text as "1094 - XX"
+        And element having id "results" should have partial text as "0123 - X"
