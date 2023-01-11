@@ -10,7 +10,7 @@
     <input type="text" id="input" name="guess"><br>
     <input type="submit" id="guess" value="Guess">
   </form>
-  <% unless guess.nil? %>
+  <% if guess %>
     <p id="output"><%= guess %></p>
   <% end %>
 </body>
