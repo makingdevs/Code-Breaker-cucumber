@@ -67,3 +67,10 @@ else # else create driver instance for desktop browser
     Process.exit(0)
   end
 end
+
+at_exit do
+  unless $pid.nil?
+    Process.kill "TERM", $pid
+    Process.wait $pid
+  end
+end
