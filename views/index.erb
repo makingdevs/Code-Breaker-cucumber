@@ -12,6 +12,7 @@
   </form>
   <% if guess %>
     <p id="output"><%= guess %></p>
+    <p id="message"><%= win ? 'You win!' : 'Try again!' %>
   <% end %>
 </body>
 </html>
