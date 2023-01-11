@@ -5,11 +5,14 @@
 	<title>CodeBreaker Game</title>
 </head>
 <body>
-  <form action="/" method="POST">
+  <form action="/" method="GET">
     <label for="guess">Enter your guess:</label><br>
     <input type="text" id="input" name="guess"><br>
     <input type="submit" id="guess" value="Guess">
   </form>
+  <% unless guess.nil? %>
+    <p id="output"><%= guess %></p>
+  <% end %>
 </body>
 </html>
 
