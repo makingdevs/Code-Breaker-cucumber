@@ -6,9 +6,10 @@ class MyApp < Sinatra::Base
   enable :sessions
   get '/' do
     result = session[:result]&.last
-    guess = result[:guess] unless result.nil?
-    win = result[:win] unless result.nil?
-    erb :index, :locals => { :guess => guess, :win => win, :results => session[:result] }
+    @results = session[:result]
+    @guess = result[:guess] unless result.nil?
+    @win = result[:win] unless result.nil?
+    erb :index
   end
   post '/' do
     play = CodeBreaker.new("7519")
