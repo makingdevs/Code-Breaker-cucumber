@@ -9,14 +9,22 @@ class MyApp < Sinatra::Base
     @results = session[:result]
     @guess = result[:guess] unless result.nil?
     @win = result[:win] unless result.nil?
+    @attemps = result[:attemps] unless result.nil?
     erb :index
   end
   post '/' do
     play = CodeBreaker.new("7519")
+    play.attemps = session[:result].last[:attemps] if session[:result]
+    redirect '/' if play.attemps == 0 
     guess = play.try(params[:guess])
     win = play.win
     result = session[:result] ? session[:result] : []
-    result << {:guess => guess, :attemp => params[:guess], :win => win}
+    result << {
+      :guess => guess,
+      :attemp => params[:guess],
+      :win => win,
+      :attemps => play.attemps
+    }
     session[:result] = result
     redirect '/'
   end
