@@ -16,8 +16,7 @@ AfterAll do
     Process.kill "TERM", $pid
     Process.wait $pid
   end
-  sleep 1
-  puts "Started App..."
+  $driver.quit
 end
 
 Before do
@@ -37,6 +36,7 @@ begin
   $driver = Selenium::WebDriver.for(:"#{$browser_type}")
   $driver.manage().window().maximize()
 rescue Exception => e
+  $driver.quit
   puts e.message
   Process.exit(0)
 end
