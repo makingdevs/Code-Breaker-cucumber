@@ -1,0 +1,29 @@
+[ N 2023-01-18 16:41:31.5188 62215/T1 age/Wat/WatchdogMain.cpp:1377 ]: Starting Passenger watchdog...
+[ N 2023-01-18 16:41:31.5347 62218/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2023-01-18 16:41:31.5349 62218/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2023-01-18 16:41:31.5438 62218/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 62218
+[ E 2023-01-18 16:41:34.2467 62218/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check failed: error in server response (unparseable data). If this error persists, check your connection security and try upgrading Passenger (next check in 24 hours)
+
+[ N 2023-01-18 16:43:14.5409 62218/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2023-01-18 16:43:14.5411 62218/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2023-01-18 16:43:14.5412 62218/T1 age/Cor/CoreMain.cpp:1147 ]: Checking whether to disconnect long-running connections for process 62272, application /Users/ghector6/MakingDevsProjects/LearningHTTP/Code-Breaker-cucumber (development)
+[ N 2023-01-18 16:43:14.5413 62218/Ta Ser/Server.h:901 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5413 62218/Tg Ser/Server.h:901 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5413 62218/Ti Ser/Server.h:901 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5414 62218/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2023-01-18 16:43:14.5414 62218/Tk Ser/Server.h:901 ]: [ServerThr.7] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5414 62218/T8 Ser/Server.h:901 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5414 62218/Tc Ser/Server.h:901 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5414 62218/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2023-01-18 16:43:14.5413 62218/Te Ser/Server.h:901 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5413 62218/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2023-01-18 16:43:14.5414 62218/Tk Ser/Server.h:558 ]: [ServerThr.7] Shutdown finished
+[ N 2023-01-18 16:43:14.5415 62218/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2023-01-18 16:43:14.5415 62218/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2023-01-18 16:43:14.5413 62218/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2023-01-18 16:43:14.5414 62218/Tm Ser/Server.h:901 ]: [ServerThr.8] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5416 62218/Tm Ser/Server.h:558 ]: [ServerThr.8] Shutdown finished
+[ N 2023-01-18 16:43:14.5416 62218/To Ser/Server.h:901 ]: [ApiServer] Freed 0 spare client objects
+[ N 2023-01-18 16:43:14.5416 62218/To Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2023-01-18 16:43:14.5419 62218/T1 age/Cor/CoreMain.cpp:1147 ]: Checking whether to disconnect long-running connections for process 62272, application /Users/ghector6/MakingDevsProjects/LearningHTTP/Code-Breaker-cucumber (development)
+[ N 2023-01-18 16:43:15.5245 62218/T1 age/Cor/CoreMain.cpp:1325 ]: Passenger core shutdown finished
