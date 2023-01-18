@@ -10,3 +10,9 @@ gem "cucumber", "~> 8.0"
 gem "selenium-cucumber"
 gem "sinatra", "~> 3.0"
 gem 'capybara'
+
+gem "capistrano", "~> 3.17"
+
+gem "capistrano-bundler", "~> 2.1"
+
+gem "capistrano-passenger", "~> 0.2.1"
