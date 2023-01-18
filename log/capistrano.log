@@ -1,0 +1,1419 @@
+# Logfile created on 2023-01-18 12:52:53 -0600 by logger.rb/v1.4.2
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 12:52:53 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [df1162a6] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [df1162a6] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 12:56:07 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [68cb795f] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [68cb795f] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 12:56:30 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2306f961] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [2306f961] Command: /usr/bin/env mkdir -p /tmp
+ DEBUG [2306f961] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2306f961] Finished in 0.976 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-d5c10fdd07a706049695.sh 0.0%
+  INFO Uploading /tmp/git-ssh-d5c10fdd07a706049695.sh 100.0%
+  INFO [eea8741a] Running /usr/bin/env chmod 700 /tmp/git-ssh-d5c10fdd07a706049695.sh as ec2-user@54.91.116.23
+ DEBUG [eea8741a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-d5c10fdd07a706049695.sh
+ DEBUG [eea8741a] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [eea8741a] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [08e20544] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [08e20544] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [08e20544] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [08e20544] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [08e20544] Finished in 0.625 seconds with exit status 0 (successful).
+  INFO [9ab8f042] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [9ab8f042] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+ DEBUG [9ab8f042] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [9ab8f042] Finished in 0.203 seconds with exit status 0 (successful).
+ DEBUG [48a7ade7] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [48a7ade7] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [48a7ade7] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [48a7ade7] Finished in 0.242 seconds with exit status 1 (failed).
+ DEBUG [c853e299] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [c853e299] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [c853e299] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [c853e299] Finished in 0.244 seconds with exit status 1 (failed).
+ DEBUG [7fbe51e9] Running if test ! -d /home/ec2-user/code_breaker; then echo "Directory does not exist '/home/ec2-user/code_breaker'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [7fbe51e9] Command: if test ! -d /home/ec2-user/code_breaker; then echo "Directory does not exist '/home/ec2-user/code_breaker'" 1>&2; false; fi
+ DEBUG [7fbe51e9] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [7fbe51e9] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [40a1c466] Running /usr/bin/env git clone --mirror git@github.com:makingdevs/Code-Breaker-cucumber.git /home/ec2-user/code_breaker/repo as ec2-user@54.91.116.23
+ DEBUG [40a1c466] Command: cd /home/ec2-user/code_breaker && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env git clone --mirror git@github.com:makingdevs/Code-Breaker-cucumber.git /home/ec2-user/code_breaker/repo )
+ DEBUG [40a1c466] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [40a1c466] 	Cloning into bare repository '/home/ec2-user/code_breaker/repo'...
+  INFO [40a1c466] Finished in 0.704 seconds with exit status 0 (successful).
+ DEBUG [9d409cba] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9d409cba] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [9d409cba] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [9d409cba] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO [6cc2971d] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [6cc2971d] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [6cc2971d] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [6cc2971d] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [877bcb8c] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [877bcb8c] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [877bcb8c] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [877bcb8c] Finished in 0.648 seconds with exit status 0 (successful).
+ DEBUG [f9ac447d] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [f9ac447d] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [f9ac447d] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [f9ac447d] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [809763e6] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118185633 as ec2-user@54.91.116.23
+ DEBUG [809763e6] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118185633 )
+ DEBUG [809763e6] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [809763e6] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [e0e3bcae] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118185633 as ec2-user@54.91.116.23
+ DEBUG [e0e3bcae] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d5c10fdd07a706049695.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118185633 )
+ DEBUG [e0e3bcae] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e0e3bcae] 	fatal: not a valid object name: master
+ DEBUG [e0e3bcae] 	tar: 
+ DEBUG [e0e3bcae] 	This does not look like a tar archive
+ DEBUG [e0e3bcae] 	
+ DEBUG [e0e3bcae] 	tar: 
+ DEBUG [e0e3bcae] 	Exiting with failure status due to previous errors
+ DEBUG [e0e3bcae] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 12:59:41 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c1ab565b] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [c1ab565b] Command: /usr/bin/env mkdir -p /tmp
+ DEBUG [c1ab565b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [c1ab565b] Finished in 0.971 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-c81a92d78307702a730d.sh 0.0%
+  INFO Uploading /tmp/git-ssh-c81a92d78307702a730d.sh 100.0%
+  INFO [9173c551] Running /usr/bin/env chmod 700 /tmp/git-ssh-c81a92d78307702a730d.sh as ec2-user@54.91.116.23
+ DEBUG [9173c551] Command: /usr/bin/env chmod 700 /tmp/git-ssh-c81a92d78307702a730d.sh
+ DEBUG [9173c551] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [9173c551] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [16ed9e0b] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [16ed9e0b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [16ed9e0b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [16ed9e0b] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [16ed9e0b] Finished in 0.652 seconds with exit status 0 (successful).
+  INFO [841b15db] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [841b15db] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+ DEBUG [841b15db] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [841b15db] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG [7f5c6204] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [7f5c6204] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [7f5c6204] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [7f5c6204] Finished in 0.250 seconds with exit status 1 (failed).
+ DEBUG [3627562b] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [3627562b] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [3627562b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [3627562b] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [2ab1fe0b] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2ab1fe0b] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [2ab1fe0b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [2ab1fe0b] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [ae8117c1] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [ae8117c1] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [ae8117c1] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [ae8117c1] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [f4d45bfa] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [f4d45bfa] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f4d45bfa] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [f4d45bfa] Finished in 0.659 seconds with exit status 0 (successful).
+ DEBUG [d65987e3] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [d65987e3] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [d65987e3] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [d65987e3] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [04ab3130] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118185944 as ec2-user@54.91.116.23
+ DEBUG [04ab3130] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118185944 )
+ DEBUG [04ab3130] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [04ab3130] Finished in 0.253 seconds with exit status 0 (successful).
+  INFO [4546b660] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118185944 as ec2-user@54.91.116.23
+ DEBUG [4546b660] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118185944 )
+ DEBUG [4546b660] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [4546b660] Finished in 0.254 seconds with exit status 0 (successful).
+ DEBUG [bfbc153d] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [bfbc153d] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [bfbc153d] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [bfbc153d] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [6aad6cb4] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [6aad6cb4] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c81a92d78307702a730d.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [6aad6cb4] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [6aad6cb4] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [6aad6cb4] Finished in 0.251 seconds with exit status 0 (successful).
+ DEBUG [e3138c0c] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118185944; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118185944'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [e3138c0c] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118185944; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118185944'" 1>&2; false; fi
+ DEBUG [e3138c0c] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e3138c0c] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [4a70dcbb] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [4a70dcbb] Command: cd /home/ec2-user/code_breaker/releases/20230118185944 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+ DEBUG [4a70dcbb] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [4a70dcbb] Finished in 0.256 seconds with exit status 0 (successful).
+ DEBUG [915be360] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118185944; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118185944'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [915be360] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118185944; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118185944'" 1>&2; false; fi
+ DEBUG [915be360] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [915be360] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [e84aa6bc] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [e84aa6bc] Command: cd /home/ec2-user/code_breaker/releases/20230118185944 && /usr/bin/env bundle config --local deployment true
+ DEBUG [e84aa6bc] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e84aa6bc] 	/usr/bin/env: 
+ DEBUG [e84aa6bc] 	bundle
+ DEBUG [e84aa6bc] 	: No such file or directory
+ DEBUG [e84aa6bc] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 13:03:53 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2088a77a] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [2088a77a] Command: /usr/bin/env mkdir -p /tmp
+ DEBUG [2088a77a] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2088a77a] Finished in 1.053 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cdab5d5f98b0e960617d.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cdab5d5f98b0e960617d.sh 100.0%
+  INFO [e958dc73] Running /usr/bin/env chmod 700 /tmp/git-ssh-cdab5d5f98b0e960617d.sh as ec2-user@54.91.116.23
+ DEBUG [e958dc73] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cdab5d5f98b0e960617d.sh
+ DEBUG [e958dc73] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [e958dc73] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [1cd54b6d] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [1cd54b6d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [1cd54b6d] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [1cd54b6d] 	Warning: Permanently added the ECDSA host key for IP address '140.82.114.4' to the list of known hosts.
+ DEBUG [1cd54b6d] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [1cd54b6d] Finished in 0.668 seconds with exit status 0 (successful).
+  INFO [58a420c5] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [58a420c5] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+ DEBUG [58a420c5] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [58a420c5] Finished in 0.203 seconds with exit status 0 (successful).
+ DEBUG [2d587f09] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [2d587f09] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [2d587f09] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [2d587f09] Finished in 0.244 seconds with exit status 1 (failed).
+ DEBUG [f28c8ef8] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [f28c8ef8] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [f28c8ef8] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [f28c8ef8] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [54718cba] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [54718cba] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [54718cba] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [54718cba] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [7749ffe8] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [7749ffe8] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [7749ffe8] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [7749ffe8] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [ec0d47b4] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [ec0d47b4] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ec0d47b4] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [ec0d47b4] Finished in 0.642 seconds with exit status 0 (successful).
+ DEBUG [d039acab] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [d039acab] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [d039acab] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [d039acab] Finished in 0.205 seconds with exit status 0 (successful).
+  INFO [d78a7bad] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118190356 as ec2-user@54.91.116.23
+ DEBUG [d78a7bad] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118190356 )
+ DEBUG [d78a7bad] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d78a7bad] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [41a8b31b] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118190356 as ec2-user@54.91.116.23
+ DEBUG [41a8b31b] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118190356 )
+ DEBUG [41a8b31b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [41a8b31b] Finished in 0.257 seconds with exit status 0 (successful).
+ DEBUG [0d6cd867] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [0d6cd867] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [0d6cd867] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [0d6cd867] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [f9315b3d] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [f9315b3d] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cdab5d5f98b0e960617d.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [f9315b3d] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [f9315b3d] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [f9315b3d] Finished in 0.254 seconds with exit status 0 (successful).
+ DEBUG [d25f4388] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118190356; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118190356'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [d25f4388] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118190356; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118190356'" 1>&2; false; fi
+ DEBUG [d25f4388] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [d25f4388] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [2208a1be] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [2208a1be] Command: cd /home/ec2-user/code_breaker/releases/20230118190356 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+ DEBUG [2208a1be] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2208a1be] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [19d311b9] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118190356; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118190356'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [19d311b9] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118190356; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118190356'" 1>&2; false; fi
+ DEBUG [19d311b9] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [19d311b9] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [207fa6e1] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [207fa6e1] Command: cd /home/ec2-user/code_breaker/releases/20230118190356 && /usr/bin/env bundle config --local deployment true
+ DEBUG [207fa6e1] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [207fa6e1] 	/usr/bin/env: 
+ DEBUG [207fa6e1] 	bundle
+ DEBUG [207fa6e1] 	: No such file or directory
+ DEBUG [207fa6e1] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 13:12:46 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [46b71977] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [46b71977] Command: /usr/bin/env mkdir -p /tmp
+ DEBUG [46b71977] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [46b71977] Finished in 0.994 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-de8346ebd218d1a3a56d.sh 0.0%
+  INFO Uploading /tmp/git-ssh-de8346ebd218d1a3a56d.sh 100.0%
+  INFO [0720d0ca] Running /usr/bin/env chmod 700 /tmp/git-ssh-de8346ebd218d1a3a56d.sh as ec2-user@54.91.116.23
+ DEBUG [0720d0ca] Command: /usr/bin/env chmod 700 /tmp/git-ssh-de8346ebd218d1a3a56d.sh
+ DEBUG [0720d0ca] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [0720d0ca] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [a49e5500] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [a49e5500] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [a49e5500] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [a49e5500] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [a49e5500] Finished in 0.646 seconds with exit status 0 (successful).
+  INFO [125ae8eb] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [125ae8eb] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+ DEBUG [125ae8eb] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [125ae8eb] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [67b50512] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [67b50512] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [67b50512] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [67b50512] Finished in 0.246 seconds with exit status 1 (failed).
+ DEBUG [bde52cc0] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [bde52cc0] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [bde52cc0] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [bde52cc0] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [5cb792b7] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [5cb792b7] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [5cb792b7] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [5cb792b7] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [7a6a62f3] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [7a6a62f3] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [7a6a62f3] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [7a6a62f3] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [f17bda66] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [f17bda66] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f17bda66] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [f17bda66] Finished in 0.655 seconds with exit status 0 (successful).
+ DEBUG [82209941] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [82209941] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [82209941] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [82209941] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [5f99dc36] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191249 as ec2-user@54.91.116.23
+ DEBUG [5f99dc36] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191249 )
+ DEBUG [5f99dc36] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [5f99dc36] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [2cabc7d5] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191249 as ec2-user@54.91.116.23
+ DEBUG [2cabc7d5] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191249 )
+ DEBUG [2cabc7d5] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2cabc7d5] Finished in 0.255 seconds with exit status 0 (successful).
+ DEBUG [d099a125] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [d099a125] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [d099a125] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [d099a125] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [62a086e2] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [62a086e2] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-de8346ebd218d1a3a56d.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [62a086e2] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [62a086e2] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [62a086e2] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [1c2650e7] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191249; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191249'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [1c2650e7] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191249; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191249'" 1>&2; false; fi
+ DEBUG [1c2650e7] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [1c2650e7] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [b867db02] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [b867db02] Command: cd /home/ec2-user/code_breaker/releases/20230118191249 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+ DEBUG [b867db02] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [b867db02] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [e99fa7b3] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191249; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191249'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [e99fa7b3] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191249; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191249'" 1>&2; false; fi
+ DEBUG [e99fa7b3] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e99fa7b3] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [c982d962] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [c982d962] Command: cd /home/ec2-user/code_breaker/releases/20230118191249 && /usr/bin/env bundle config --local deployment true
+ DEBUG [c982d962] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [c982d962] 	/usr/bin/env: 
+ DEBUG [c982d962] 	bundle
+ DEBUG [c982d962] 	: No such file or directory
+ DEBUG [c982d962] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 13:18:13 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ee5775d1] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [ee5775d1] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ee5775d1] Finished in 0.963 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-c16d146add5b3a154841.sh 0.0%
+  INFO Uploading /tmp/git-ssh-c16d146add5b3a154841.sh 100.0%
+  INFO [d4e8ad58] Running /usr/bin/env chmod 700 /tmp/git-ssh-c16d146add5b3a154841.sh as ec2-user@54.91.116.23
+ DEBUG [d4e8ad58] Command: /usr/bin/env chmod 700 /tmp/git-ssh-c16d146add5b3a154841.sh
+  INFO [d4e8ad58] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [c72fac68] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [c72fac68] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [c72fac68] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [c72fac68] Finished in 0.658 seconds with exit status 0 (successful).
+  INFO [3bb89324] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [3bb89324] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+  INFO [3bb89324] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG [4441d3f5] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [4441d3f5] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [4441d3f5] Finished in 0.243 seconds with exit status 1 (failed).
+ DEBUG [a0a201ed] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [a0a201ed] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [a0a201ed] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [172a4a21] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [172a4a21] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [172a4a21] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [0792c10b] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [0792c10b] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [0792c10b] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [671ff7dd] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [671ff7dd] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env git remote update --prune )
+  INFO [671ff7dd] Finished in 0.645 seconds with exit status 0 (successful).
+ DEBUG [0de63570] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [0de63570] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [0de63570] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [35a43284] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191816 as ec2-user@54.91.116.23
+ DEBUG [35a43284] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191816 )
+  INFO [35a43284] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [8625749f] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191816 as ec2-user@54.91.116.23
+ DEBUG [8625749f] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191816 )
+  INFO [8625749f] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [cf27c36f] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [cf27c36f] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [cf27c36f] Finished in 0.240 seconds with exit status 0 (successful).
+ DEBUG [7aa3b0f7] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [7aa3b0f7] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-c16d146add5b3a154841.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [7aa3b0f7] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [7aa3b0f7] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [da3c00e8] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191816; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191816'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [da3c00e8] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191816; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191816'" 1>&2; false; fi
+ DEBUG [da3c00e8] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [1a8511d5] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [1a8511d5] Command: cd /home/ec2-user/code_breaker/releases/20230118191816 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+  INFO [1a8511d5] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [816fe87f] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191816; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191816'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [816fe87f] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191816; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191816'" 1>&2; false; fi
+ DEBUG [816fe87f] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [2f9f8322] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [2f9f8322] Command: cd /home/ec2-user/code_breaker/releases/20230118191816 && /usr/bin/env bundle config --local deployment true
+ DEBUG [2f9f8322] 	/usr/bin/env: 
+ DEBUG [2f9f8322] 	bundle
+ DEBUG [2f9f8322] 	: No such file or directory
+ DEBUG [2f9f8322] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 13:19:54 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fcd556b5] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [fcd556b5] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fcd556b5] Finished in 0.966 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-686d2b01dde0296b3c53.sh 0.0%
+  INFO Uploading /tmp/git-ssh-686d2b01dde0296b3c53.sh 100.0%
+  INFO [b850c943] Running /usr/bin/env chmod 700 /tmp/git-ssh-686d2b01dde0296b3c53.sh as ec2-user@54.91.116.23
+ DEBUG [b850c943] Command: /usr/bin/env chmod 700 /tmp/git-ssh-686d2b01dde0296b3c53.sh
+  INFO [b850c943] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [839cc4aa] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [839cc4aa] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [839cc4aa] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [839cc4aa] Finished in 0.650 seconds with exit status 0 (successful).
+  INFO [c4f5630b] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [c4f5630b] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+  INFO [c4f5630b] Finished in 0.202 seconds with exit status 0 (successful).
+ DEBUG [25e1f1d9] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [25e1f1d9] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [25e1f1d9] Finished in 0.243 seconds with exit status 1 (failed).
+ DEBUG [e4521b43] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [e4521b43] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [e4521b43] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [39825c07] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [39825c07] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [39825c07] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [70462396] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [70462396] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [70462396] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [cbcff3b1] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [cbcff3b1] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env git remote update --prune )
+  INFO [cbcff3b1] Finished in 0.651 seconds with exit status 0 (successful).
+ DEBUG [956ed373] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [956ed373] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [956ed373] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [d146264c] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191957 as ec2-user@54.91.116.23
+ DEBUG [d146264c] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118191957 )
+  INFO [d146264c] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [4137e2c9] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191957 as ec2-user@54.91.116.23
+ DEBUG [4137e2c9] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118191957 )
+  INFO [4137e2c9] Finished in 0.255 seconds with exit status 0 (successful).
+ DEBUG [85e4e832] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [85e4e832] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [85e4e832] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [ba2b2d8b] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [ba2b2d8b] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-686d2b01dde0296b3c53.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [ba2b2d8b] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [ba2b2d8b] Finished in 0.257 seconds with exit status 0 (successful).
+ DEBUG [58f94de3] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191957; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191957'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [58f94de3] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191957; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191957'" 1>&2; false; fi
+ DEBUG [58f94de3] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [d5e9ccd1] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [d5e9ccd1] Command: cd /home/ec2-user/code_breaker/releases/20230118191957 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+  INFO [d5e9ccd1] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [31c8161e] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118191957; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191957'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [31c8161e] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118191957; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118191957'" 1>&2; false; fi
+ DEBUG [31c8161e] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [9220eb5a] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [9220eb5a] Command: cd /home/ec2-user/code_breaker/releases/20230118191957 && /usr/bin/env bundle config --local deployment true
+ DEBUG [9220eb5a] 	/usr/bin/env: 
+ DEBUG [9220eb5a] 	bundle
+ DEBUG [9220eb5a] 	: No such file or directory
+ DEBUG [9220eb5a] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 13:25:38 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cef6ddac] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [cef6ddac] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cef6ddac] Finished in 0.982 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-fc67da9c281885d877a7.sh 0.0%
+  INFO Uploading /tmp/git-ssh-fc67da9c281885d877a7.sh 100.0%
+  INFO [b81f8386] Running /usr/bin/env chmod 700 /tmp/git-ssh-fc67da9c281885d877a7.sh as ec2-user@54.91.116.23
+ DEBUG [b81f8386] Command: /usr/bin/env chmod 700 /tmp/git-ssh-fc67da9c281885d877a7.sh
+  INFO [b81f8386] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [7d5b00f5] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [7d5b00f5] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [7d5b00f5] 	Warning: Permanently added the ECDSA host key for IP address '140.82.113.4' to the list of known hosts.
+ DEBUG [7d5b00f5] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [7d5b00f5] Finished in 0.642 seconds with exit status 0 (successful).
+  INFO [78a96390] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [78a96390] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+  INFO [78a96390] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [4a2a13a1] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [4a2a13a1] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [4a2a13a1] Finished in 0.246 seconds with exit status 1 (failed).
+ DEBUG [1262f79a] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [1262f79a] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [1262f79a] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [2d1eec2c] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2d1eec2c] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [2d1eec2c] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [e7d65651] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [e7d65651] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [e7d65651] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [cb109530] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [cb109530] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env git remote update --prune )
+  INFO [cb109530] Finished in 0.691 seconds with exit status 0 (successful).
+ DEBUG [20bc9d6e] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [20bc9d6e] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [20bc9d6e] Finished in 0.202 seconds with exit status 0 (successful).
+  INFO [a5980551] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118192541 as ec2-user@54.91.116.23
+ DEBUG [a5980551] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118192541 )
+  INFO [a5980551] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [98dc41c6] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118192541 as ec2-user@54.91.116.23
+ DEBUG [98dc41c6] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118192541 )
+  INFO [98dc41c6] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [ad8de66b] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [ad8de66b] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [ad8de66b] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [5acf7488] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [5acf7488] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-fc67da9c281885d877a7.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [5acf7488] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [5acf7488] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [824d99d4] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118192541; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118192541'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [824d99d4] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118192541; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118192541'" 1>&2; false; fi
+ DEBUG [824d99d4] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [2f784716] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [2f784716] Command: cd /home/ec2-user/code_breaker/releases/20230118192541 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+  INFO [2f784716] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [48864d46] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118192541; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118192541'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [48864d46] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118192541; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118192541'" 1>&2; false; fi
+ DEBUG [48864d46] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [890ec06f] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [890ec06f] Command: cd /home/ec2-user/code_breaker/releases/20230118192541 && /usr/bin/env bundle config --local deployment true
+ DEBUG [890ec06f] 	/usr/bin/env: 
+ DEBUG [890ec06f] 	bundle
+ DEBUG [890ec06f] 	: No such file or directory
+ DEBUG [890ec06f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 14:07:50 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [49385eda] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [49385eda] Command: /usr/bin/env mkdir -p /tmp
+  INFO [49385eda] Finished in 0.963 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-182334ca418133c31e4b.sh 0.0%
+  INFO Uploading /tmp/git-ssh-182334ca418133c31e4b.sh 100.0%
+  INFO [617860cb] Running /usr/bin/env chmod 700 /tmp/git-ssh-182334ca418133c31e4b.sh as ec2-user@54.91.116.23
+ DEBUG [617860cb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-182334ca418133c31e4b.sh
+  INFO [617860cb] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [9ccb2e98] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [9ccb2e98] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [9ccb2e98] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [9ccb2e98] Finished in 0.637 seconds with exit status 0 (successful).
+  INFO [4a58a93d] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [4a58a93d] Command: /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases
+  INFO [4a58a93d] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [aae18245] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [aae18245] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [aae18245] Finished in 0.246 seconds with exit status 1 (failed).
+ DEBUG [afa75dcd] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [afa75dcd] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [afa75dcd] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [c9c3c16a] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [c9c3c16a] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [c9c3c16a] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [50020b1a] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [50020b1a] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [50020b1a] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [25036329] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [25036329] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env git remote update --prune )
+  INFO [25036329] Finished in 0.636 seconds with exit status 0 (successful).
+ DEBUG [eb49979a] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [eb49979a] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [eb49979a] Finished in 0.200 seconds with exit status 0 (successful).
+  INFO [d28ea5b6] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118200753 as ec2-user@54.91.116.23
+ DEBUG [d28ea5b6] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118200753 )
+  INFO [d28ea5b6] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [76dc13cd] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118200753 as ec2-user@54.91.116.23
+ DEBUG [76dc13cd] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118200753 )
+  INFO [76dc13cd] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [578b2087] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [578b2087] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [578b2087] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [76d5fd63] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [76d5fd63] Command: cd /home/ec2-user/code_breaker/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-182334ca418133c31e4b.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [76d5fd63] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [76d5fd63] Finished in 0.251 seconds with exit status 0 (successful).
+ DEBUG [030c174b] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118200753; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118200753'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [030c174b] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118200753; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118200753'" 1>&2; false; fi
+ DEBUG [030c174b] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [63769a2b] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [63769a2b] Command: cd /home/ec2-user/code_breaker/releases/20230118200753 && /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION
+  INFO [63769a2b] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [2a239573] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118200753; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118200753'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2a239573] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118200753; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118200753'" 1>&2; false; fi
+ DEBUG [2a239573] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [8d46b167] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [8d46b167] Command: cd /home/ec2-user/code_breaker/releases/20230118200753 && /usr/bin/env bundle config --local deployment true
+ DEBUG [8d46b167] 	/usr/bin/env: 
+ DEBUG [8d46b167] 	bundle
+ DEBUG [8d46b167] 	: No such file or directory
+ DEBUG [8d46b167] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 14:49:05 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1d2fdb0c] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [1d2fdb0c] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [1d2fdb0c] Finished in 0.985 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-37693e9b5fcbdef8ae73.sh 0.0%
+  INFO Uploading /tmp/git-ssh-37693e9b5fcbdef8ae73.sh 100.0%
+  INFO [8a048c3d] Running /usr/bin/env chmod 700 /tmp/git-ssh-37693e9b5fcbdef8ae73.sh as ec2-user@54.91.116.23
+ DEBUG [8a048c3d] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-37693e9b5fcbdef8ae73.sh )
+  INFO [8a048c3d] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [6d7d0748] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [6d7d0748] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [6d7d0748] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [6d7d0748] Finished in 0.706 seconds with exit status 0 (successful).
+  INFO [bf1a9907] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [bf1a9907] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [bf1a9907] Finished in 0.212 seconds with exit status 0 (successful).
+ DEBUG [fb23aff0] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [fb23aff0] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [fb23aff0] Finished in 0.246 seconds with exit status 1 (failed).
+ DEBUG [ededb016] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [ededb016] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [ededb016] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [9d646a22] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9d646a22] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [9d646a22] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [c92bca74] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [c92bca74] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [c92bca74] Finished in 0.256 seconds with exit status 0 (successful).
+  INFO [b46343bb] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [b46343bb] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env git remote update --prune )
+  INFO [b46343bb] Finished in 0.660 seconds with exit status 0 (successful).
+ DEBUG [d096e9e1] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [d096e9e1] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [d096e9e1] Finished in 0.205 seconds with exit status 0 (successful).
+  INFO [ba094ff6] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118204908 as ec2-user@54.91.116.23
+ DEBUG [ba094ff6] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118204908 )
+  INFO [ba094ff6] Finished in 0.252 seconds with exit status 0 (successful).
+  INFO [3906e8b5] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118204908 as ec2-user@54.91.116.23
+ DEBUG [3906e8b5] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118204908 )
+  INFO [3906e8b5] Finished in 0.258 seconds with exit status 0 (successful).
+ DEBUG [37451f1b] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [37451f1b] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [37451f1b] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [16165a23] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [16165a23] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-37693e9b5fcbdef8ae73.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [16165a23] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [16165a23] Finished in 0.257 seconds with exit status 0 (successful).
+ DEBUG [8a569fb1] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [8a569fb1] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi
+ DEBUG [8a569fb1] Finished in 0.251 seconds with exit status 0 (successful).
+  INFO [cba26e32] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [cba26e32] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION )
+  INFO [cba26e32] Finished in 0.255 seconds with exit status 0 (successful).
+ DEBUG [a58534a9] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [a58534a9] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi
+ DEBUG [a58534a9] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [fdbbdc24] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [fdbbdc24] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [fdbbdc24] Finished in 0.558 seconds with exit status 0 (successful).
+  INFO [51061c66] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [51061c66] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [51061c66] Finished in 0.816 seconds with exit status 0 (successful).
+  INFO [8293e31d] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [8293e31d] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [8293e31d] Finished in 0.536 seconds with exit status 0 (successful).
+ DEBUG [5f2a479b] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [5f2a479b] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118204908; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118204908'" 1>&2; false; fi
+ DEBUG [5f2a479b] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [0171a889] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [0171a889] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [0171a889] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [0171a889] 	The following gems are missing
+ DEBUG [0171a889] 	 * rake (13.0.6)
+ DEBUG [0171a889] 	 * public_suffix (5.0.1)
+ DEBUG [0171a889] 	 * addressable (2.8.1)
+ DEBUG [0171a889] 	 * net-ssh (7.0.1)
+ DEBUG [0171a889] 	 * net-scp (4.0.0)
+ DEBUG [0171a889] 	 * sshkit (1.21.3)
+ DEBUG [0171a889] 	 * airbrussh (1.4.1)
+ DEBUG [0171a889] 	 * eventmachine (1.2.7)
+ DEBUG [0171a889] 	 * websocket-extensions (0.1.5)
+ DEBUG [0171a889] 	 * websocket-driver (0.7.5)
+ DEBUG [0171a889] 	 * faye-websocket (0.11.1)
+ DEBUG [0171a889] 	 * rexml (3.2.5)
+ DEBUG [0171a889] 	 * rubyzip (2.3.2)
+ DEBUG [0171a889] 	 * websocket (1.2.9)
+ DEBUG [0171a889] 	 * selenium-webdriver (4.7.1)
+ DEBUG [0171a889] 	 * appium_lib_core (6.0.0)
+ DEBUG [0171a889] 	 * racc (1.6.2)
+ DEBUG [0171a889] 	 * nokogiri (1.13.10)
+ DEBUG [0171a889] 	 * tomlrb (2.0.3)
+ DEBUG [0171a889] 	 * appium_lib (12.2.0)
+ DEBUG [0171a889] 	 * builder (3.2.4)
+ DEBUG [0171a889] 	 * concurrent-ruby (1.1.10)
+ DEBUG [0171a889] 	 * i18n (1.12.0)
+ DEBUG [0171a889] 	 * capistrano (3.17.1)
+ DEBUG [0171a889] 	 * capistrano-bundler (2.1.0)
+ DEBUG [0171a889] 	 * capistrano-passenger (0.2.1)
+ DEBUG [0171a889] 	 * matrix (0.4.2)
+ DEBUG [0171a889] 	 * mini_mime (1.1.2)
+ DEBUG [0171a889] 	 * rack (2.2.5)
+ DEBUG [0171a889] 	 * rack-test (2.0.2)
+ DEBUG [0171a889] 	 * regexp_parser (2.6.1)
+ DEBUG [0171a889] 	 * xpath (3.2.0)
+ DEBUG [0171a889] 	 * capybara (3.38.0)
+ DEBUG [0171a889] 	 * chunky_png (1.4.0)
+ DEBUG [0171a889] 	 * cucumber-ci-environment (9.1.0)
+ DEBUG [0171a889] 	 * cucumber-messages (18.0.0)
+ DEBUG [0171a889] 	 * cucumber-gherkin (23.0.1)
+ DEBUG [0171a889] 	 * cucumber-tag-expressions (4.1.0)
+ DEBUG [0171a889] 	 * cucumber-core (11.0.0)
+ DEBUG [0171a889] 	 * cucumber-cucumber-expressions (15.2.0)
+ DEBUG [0171a889] 	 * cucumber-html-formatter (19.2.0)
+ DEBUG [0171a889] 	 * diff-lcs (1.5.0)
+ DEBUG [0171a889] 	 * mime-types-data (3.2022.0105)
+ DEBUG [0171a889] 	 * mime-types (3.4.1)
+ DEBUG [0171a889] 	 * multi_test (1.1.0)
+ DEBUG [0171a889] 	 * ffi (1.15.5)
+ DEBUG [0171a889] 	 * sys-uname (1.2.2)
+ DEBUG [0171a889] 	 * cucumber (8.0.0)
+ DEBUG [0171a889] 	 * ruby2_keywords (0.0.5)
+ DEBUG [0171a889] 	 * mustermann (3.0.0)
+ DEBUG [0171a889] 	 * rack-protection (3.0.5)
+ DEBUG [0171a889] 	 * rspec-support (3.12.0)
+ DEBUG [0171a889] 	 * rspec-core (3.12.0)
+ DEBUG [0171a889] 	 * rspec-expectations (3.12.1)
+ DEBUG [0171a889] 	 * rspec-mocks (3.12.1)
+ DEBUG [0171a889] 	 * rspec (3.12.0)
+ DEBUG [0171a889] 	 * selenium-cucumber (3.1.5)
+ DEBUG [0171a889] 	 * tilt (2.0.11)
+ DEBUG [0171a889] 	 * sinatra (3.0.5)
+ DEBUG [0171a889] 	Install missing gems with `bundle install`
+ DEBUG [0171a889] Finished in 0.722 seconds with exit status 1 (failed).
+  INFO [454e59eb] Running /usr/bin/env bundle install --jobs 4 --quiet as ec2-user@54.91.116.23
+ DEBUG [454e59eb] Command: cd /home/ec2-user/code_breaker/releases/20230118204908 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle install --jobs 4 --quiet )
+ DEBUG [454e59eb] 	Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+/home/ec2-user/.asdf/installs/ruby/2.7.5/bin/ruby -I
+/home/ec2-user/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r
+./siteconf20230118-1199-11z2np8.rb extconf.rb
+checking for -lcrypto... no
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... yes
+checking for accept4() in sys/socket.h... yes
+checking for SOCK_CLOEXEC in sys/socket.h... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=
+creating Makefile
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+make: g++: Command not found
+make: *** [binder.o] Error 127
+
+make failed, exit code 2
+
+Gem files will remain installed in
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7 for
+inspection.
+Results logged to
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/eventmachine-1.2.7/gem_make.out
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  selenium-cucumber was resolved to 3.1.5, which depends on
+    appium_lib was resolved to 12.2.0, which depends on
+      appium_lib_core was resolved to 6.0.0, which depends on
+        faye-websocket was resolved to 0.11.1, which depends on
+          eventmachine
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 14:53:05 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [297182ec] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [297182ec] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [297182ec] Finished in 1.054 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-662adcbe1de5b2983a01.sh 0.0%
+  INFO Uploading /tmp/git-ssh-662adcbe1de5b2983a01.sh 100.0%
+  INFO [47cc63a1] Running /usr/bin/env chmod 700 /tmp/git-ssh-662adcbe1de5b2983a01.sh as ec2-user@54.91.116.23
+ DEBUG [47cc63a1] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-662adcbe1de5b2983a01.sh )
+  INFO [47cc63a1] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [0fb2b328] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [0fb2b328] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [0fb2b328] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [0fb2b328] Finished in 0.711 seconds with exit status 0 (successful).
+  INFO [d2229aed] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [d2229aed] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [d2229aed] Finished in 0.203 seconds with exit status 0 (successful).
+ DEBUG [bee24612] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [bee24612] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [bee24612] Finished in 0.245 seconds with exit status 1 (failed).
+ DEBUG [0150d7ce] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [0150d7ce] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [0150d7ce] Finished in 0.253 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [4ac1833f] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [4ac1833f] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [4ac1833f] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [abac7423] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [abac7423] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [abac7423] Finished in 0.256 seconds with exit status 0 (successful).
+  INFO [3f47b73c] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [3f47b73c] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env git remote update --prune )
+  INFO [3f47b73c] Finished in 0.673 seconds with exit status 0 (successful).
+ DEBUG [adf75d4a] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [adf75d4a] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [adf75d4a] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [5bb22623] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205308 as ec2-user@54.91.116.23
+ DEBUG [5bb22623] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205308 )
+  INFO [5bb22623] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [27cac2b8] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205308 as ec2-user@54.91.116.23
+ DEBUG [27cac2b8] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205308 )
+  INFO [27cac2b8] Finished in 0.261 seconds with exit status 0 (successful).
+ DEBUG [c82e5380] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [c82e5380] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [c82e5380] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [a41cbc45] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [a41cbc45] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-662adcbe1de5b2983a01.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [a41cbc45] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [a41cbc45] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [64ef79c4] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [64ef79c4] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi
+ DEBUG [64ef79c4] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [7cae4d5d] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [7cae4d5d] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION )
+  INFO [7cae4d5d] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [6830cf32] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [6830cf32] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi
+ DEBUG [6830cf32] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [74cf140b] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [74cf140b] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [74cf140b] Finished in 0.610 seconds with exit status 0 (successful).
+  INFO [795f1a64] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [795f1a64] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [795f1a64] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [740614bb] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [740614bb] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [740614bb] Finished in 0.552 seconds with exit status 0 (successful).
+ DEBUG [9c18f58e] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9c18f58e] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205308; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205308'" 1>&2; false; fi
+ DEBUG [9c18f58e] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [28b4048e] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [28b4048e] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [28b4048e] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [28b4048e] 	The following gems are missing
+ DEBUG [28b4048e] 	 * eventmachine (1.2.7)
+ DEBUG [28b4048e] 	 * faye-websocket (0.11.1)
+ DEBUG [28b4048e] 	 * appium_lib_core (6.0.0)
+ DEBUG [28b4048e] 	 * appium_lib (12.2.0)
+ DEBUG [28b4048e] 	 * capistrano-bundler (2.1.0)
+ DEBUG [28b4048e] 	 * capistrano-passenger (0.2.1)
+ DEBUG [28b4048e] 	 * selenium-cucumber (3.1.5)
+ DEBUG [28b4048e] 	Install missing gems with `bundle install`
+ DEBUG [28b4048e] Finished in 0.706 seconds with exit status 1 (failed).
+  INFO [9f02d652] Running /usr/bin/env bundle install --jobs 4 --quiet as ec2-user@54.91.116.23
+ DEBUG [9f02d652] Command: cd /home/ec2-user/code_breaker/releases/20230118205308 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle install --jobs 4 --quiet )
+ DEBUG [9f02d652] 	Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+/home/ec2-user/.asdf/installs/ruby/2.7.5/bin/ruby -I
+/home/ec2-user/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r
+./siteconf20230118-5722-1lgdmvv.rb extconf.rb
+checking for -lcrypto... no
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... yes
+checking for accept4() in sys/socket.h... yes
+checking for SOCK_CLOEXEC in sys/socket.h... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=
+creating Makefile
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+make: g++: Command not found
+make: *** [binder.o] Error 127
+
+make failed, exit code 2
+
+Gem files will remain installed in
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7 for
+inspection.
+Results logged to
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/eventmachine-1.2.7/gem_make.out
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  selenium-cucumber was resolved to 3.1.5, which depends on
+    appium_lib was resolved to 12.2.0, which depends on
+      appium_lib_core was resolved to 6.0.0, which depends on
+        faye-websocket was resolved to 0.11.1, which depends on
+          eventmachine
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 14:57:09 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0200e933] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [0200e933] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+ DEBUG [0200e933] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [0200e933] Finished in 0.968 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-6f68291a3ce862a707b4.sh 0.0%
+  INFO Uploading /tmp/git-ssh-6f68291a3ce862a707b4.sh 100.0%
+  INFO [d2608087] Running /usr/bin/env chmod 700 /tmp/git-ssh-6f68291a3ce862a707b4.sh as ec2-user@54.91.116.23
+ DEBUG [d2608087] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-6f68291a3ce862a707b4.sh )
+ DEBUG [d2608087] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d2608087] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [6777c9ce] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [6777c9ce] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [6777c9ce] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [6777c9ce] 	Warning: Permanently added the ECDSA host key for IP address '140.82.112.3' to the list of known hosts.
+ DEBUG [6777c9ce] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [6777c9ce] Finished in 0.658 seconds with exit status 0 (successful).
+  INFO [ab783cae] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [ab783cae] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+ DEBUG [ab783cae] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [ab783cae] Finished in 0.211 seconds with exit status 0 (successful).
+ DEBUG [ff2bcf84] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [ff2bcf84] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [ff2bcf84] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [ff2bcf84] Finished in 0.249 seconds with exit status 1 (failed).
+ DEBUG [9b5de84c] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [9b5de84c] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [9b5de84c] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [9b5de84c] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [9551eea7] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9551eea7] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [9551eea7] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [9551eea7] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [d8716a78] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [d8716a78] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [d8716a78] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d8716a78] Finished in 0.253 seconds with exit status 0 (successful).
+  INFO [428ec956] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [428ec956] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [428ec956] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [428ec956] Finished in 0.671 seconds with exit status 0 (successful).
+ DEBUG [c2ff75a5] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [c2ff75a5] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [c2ff75a5] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [c2ff75a5] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [1ad2d5cd] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205712 as ec2-user@54.91.116.23
+ DEBUG [1ad2d5cd] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205712 )
+ DEBUG [1ad2d5cd] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [1ad2d5cd] Finished in 0.251 seconds with exit status 0 (successful).
+  INFO [49f1699b] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205712 as ec2-user@54.91.116.23
+ DEBUG [49f1699b] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205712 )
+ DEBUG [49f1699b] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [49f1699b] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [cc9c75fb] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [cc9c75fb] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [cc9c75fb] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [cc9c75fb] Finished in 0.255 seconds with exit status 0 (successful).
+ DEBUG [8d54ba05] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [8d54ba05] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-6f68291a3ce862a707b4.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [8d54ba05] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [8d54ba05] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [8d54ba05] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [10e136fd] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [10e136fd] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi
+ DEBUG [10e136fd] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [10e136fd] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [2f2e011c] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [2f2e011c] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION )
+ DEBUG [2f2e011c] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2f2e011c] Finished in 0.256 seconds with exit status 0 (successful).
+ DEBUG [b45790fd] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [b45790fd] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi
+ DEBUG [b45790fd] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [b45790fd] Finished in 0.249 seconds with exit status 0 (successful).
+  INFO [fff0f6e6] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [fff0f6e6] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+ DEBUG [fff0f6e6] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [fff0f6e6] Finished in 0.541 seconds with exit status 0 (successful).
+  INFO [d92b354f] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [d92b354f] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+ DEBUG [d92b354f] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d92b354f] Finished in 0.605 seconds with exit status 0 (successful).
+  INFO [7a190e15] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [7a190e15] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+ DEBUG [7a190e15] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [7a190e15] Finished in 0.542 seconds with exit status 0 (successful).
+ DEBUG [3e2a4cf6] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [3e2a4cf6] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205712; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205712'" 1>&2; false; fi
+ DEBUG [3e2a4cf6] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [3e2a4cf6] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [aeb100a8] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [aeb100a8] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [aeb100a8] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [aeb100a8] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [aeb100a8] 	The following gems are missing
+ DEBUG [aeb100a8] 	 * eventmachine (1.2.7)
+ DEBUG [aeb100a8] 	 * faye-websocket (0.11.1)
+ DEBUG [aeb100a8] 	 * appium_lib_core (6.0.0)
+ DEBUG [aeb100a8] 	 * appium_lib (12.2.0)
+ DEBUG [aeb100a8] 	 * selenium-cucumber (3.1.5)
+ DEBUG [aeb100a8] 	Install missing gems with `bundle install`
+ DEBUG [aeb100a8] Finished in 0.645 seconds with exit status 1 (failed).
+  INFO [9a8181cc] Running /usr/bin/env bundle install --jobs 4 --quiet as ec2-user@54.91.116.23
+ DEBUG [9a8181cc] Command: cd /home/ec2-user/code_breaker/releases/20230118205712 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle install --jobs 4 --quiet )
+ DEBUG [9a8181cc] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [9a8181cc] 	Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+/home/ec2-user/.asdf/installs/ruby/2.7.5/bin/ruby -I
+/home/ec2-user/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r
+./siteconf20230118-6924-dz2orl.rb extconf.rb
+checking for -lcrypto... no
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... yes
+checking for accept4() in sys/socket.h... yes
+checking for SOCK_CLOEXEC in sys/socket.h... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=
+creating Makefile
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+make: g++: Command not found
+make: *** [binder.o] Error 127
+
+make failed, exit code 2
+
+Gem files will remain installed in
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7 for
+inspection.
+Results logged to
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/eventmachine-1.2.7/gem_make.out
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  selenium-cucumber was resolved to 3.1.5, which depends on
+    appium_lib was resolved to 12.2.0, which depends on
+      appium_lib_core was resolved to 6.0.0, which depends on
+        faye-websocket was resolved to 0.11.1, which depends on
+          eventmachine
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 14:58:53 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c96b773a] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [c96b773a] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+ DEBUG [c96b773a] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [c96b773a] Finished in 0.974 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-b93002aa8f38cde06152.sh 0.0%
+  INFO Uploading /tmp/git-ssh-b93002aa8f38cde06152.sh 100.0%
+  INFO [6a3fa141] Running /usr/bin/env chmod 700 /tmp/git-ssh-b93002aa8f38cde06152.sh as ec2-user@54.91.116.23
+ DEBUG [6a3fa141] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-b93002aa8f38cde06152.sh )
+ DEBUG [6a3fa141] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [6a3fa141] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [5a42bdbe] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [5a42bdbe] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [5a42bdbe] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [5a42bdbe] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [5a42bdbe] Finished in 0.654 seconds with exit status 0 (successful).
+  INFO [3e6f7dbf] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [3e6f7dbf] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+ DEBUG [3e6f7dbf] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [3e6f7dbf] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [b002c9c4] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [b002c9c4] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [b002c9c4] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [b002c9c4] Finished in 0.247 seconds with exit status 1 (failed).
+ DEBUG [3b123cfb] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [3b123cfb] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [3b123cfb] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [3b123cfb] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [e2665022] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [e2665022] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [e2665022] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e2665022] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [aa6932fb] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [aa6932fb] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+ DEBUG [aa6932fb] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [aa6932fb] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [2a04f0b2] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [2a04f0b2] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [2a04f0b2] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [2a04f0b2] Finished in 0.656 seconds with exit status 0 (successful).
+ DEBUG [e1c44a73] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [e1c44a73] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [e1c44a73] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [e1c44a73] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [efa4db80] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205856 as ec2-user@54.91.116.23
+ DEBUG [efa4db80] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118205856 )
+ DEBUG [efa4db80] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [efa4db80] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [85df2c9e] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205856 as ec2-user@54.91.116.23
+ DEBUG [85df2c9e] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118205856 )
+ DEBUG [85df2c9e] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [85df2c9e] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [4458d992] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [4458d992] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [4458d992] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [4458d992] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [5a4c5eef] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [5a4c5eef] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b93002aa8f38cde06152.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [5a4c5eef] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [5a4c5eef] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [5a4c5eef] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [9622bdc7] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9622bdc7] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi
+ DEBUG [9622bdc7] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [9622bdc7] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [d166e4b1] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [d166e4b1] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION )
+ DEBUG [d166e4b1] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d166e4b1] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [157984f1] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [157984f1] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi
+ DEBUG [157984f1] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [157984f1] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [c440f2d0] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [c440f2d0] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+ DEBUG [c440f2d0] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [c440f2d0] Finished in 0.587 seconds with exit status 0 (successful).
+  INFO [d7b2a2d9] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [d7b2a2d9] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+ DEBUG [d7b2a2d9] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [d7b2a2d9] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [a3cbc05f] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [a3cbc05f] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+ DEBUG [a3cbc05f] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+  INFO [a3cbc05f] Finished in 0.611 seconds with exit status 0 (successful).
+ DEBUG [adb5ae76] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [adb5ae76] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118205856; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118205856'" 1>&2; false; fi
+ DEBUG [adb5ae76] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [adb5ae76] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [f32f0ff9] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [f32f0ff9] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [f32f0ff9] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [f32f0ff9] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [f32f0ff9] 	The following gems are missing
+ DEBUG [f32f0ff9] 	 * eventmachine (1.2.7)
+ DEBUG [f32f0ff9] 	 * faye-websocket (0.11.1)
+ DEBUG [f32f0ff9] 	 * appium_lib_core (6.0.0)
+ DEBUG [f32f0ff9] 	 * appium_lib (12.2.0)
+ DEBUG [f32f0ff9] 	 * selenium-cucumber (3.1.5)
+ DEBUG [f32f0ff9] 	Install missing gems with `bundle install`
+ DEBUG [f32f0ff9] Finished in 0.676 seconds with exit status 1 (failed).
+  INFO [fa5106af] Running /usr/bin/env bundle install --jobs 4 --quiet as ec2-user@54.91.116.23
+ DEBUG [fa5106af] Command: cd /home/ec2-user/code_breaker/releases/20230118205856 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle install --jobs 4 --quiet )
+ DEBUG [fa5106af] 	/etc/profile.d/lang.sh: line 19: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+ DEBUG [fa5106af] 	Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+/home/ec2-user/.asdf/installs/ruby/2.7.5/bin/ruby -I
+/home/ec2-user/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r
+./siteconf20230118-8468-103v1zt.rb extconf.rb
+checking for -lcrypto... no
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... yes
+checking for accept4() in sys/socket.h... yes
+checking for SOCK_CLOEXEC in sys/socket.h... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=
+creating Makefile
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+make: g++: Command not found
+make: *** [binder.o] Error 127
+
+make failed, exit code 2
+
+Gem files will remain installed in
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7 for
+inspection.
+Results logged to
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/eventmachine-1.2.7/gem_make.out
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  selenium-cucumber was resolved to 3.1.5, which depends on
+    appium_lib was resolved to 12.2.0, which depends on
+      appium_lib_core was resolved to 6.0.0, which depends on
+        faye-websocket was resolved to 0.11.1, which depends on
+          eventmachine
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-18 15:00:22 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [460c5fd8] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [460c5fd8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [460c5fd8] Finished in 0.965 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-d3421466ab1af106404a.sh 0.0%
+  INFO Uploading /tmp/git-ssh-d3421466ab1af106404a.sh 100.0%
+  INFO [447864bd] Running /usr/bin/env chmod 700 /tmp/git-ssh-d3421466ab1af106404a.sh as ec2-user@54.91.116.23
+ DEBUG [447864bd] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-d3421466ab1af106404a.sh )
+  INFO [447864bd] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [0e4a7cda] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [0e4a7cda] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [0e4a7cda] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [0e4a7cda] Finished in 0.641 seconds with exit status 0 (successful).
+  INFO [7733a1c3] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [7733a1c3] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [7733a1c3] Finished in 0.205 seconds with exit status 0 (successful).
+ DEBUG [80841733] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [80841733] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [80841733] Finished in 0.245 seconds with exit status 1 (failed).
+ DEBUG [c854c07a] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [c854c07a] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [c854c07a] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [78114aa1] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [78114aa1] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [78114aa1] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [d8703cfd] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [d8703cfd] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [d8703cfd] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [fe319cc1] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [fe319cc1] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env git remote update --prune )
+  INFO [fe319cc1] Finished in 0.637 seconds with exit status 0 (successful).
+ DEBUG [3a2cb794] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [3a2cb794] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [3a2cb794] Finished in 0.202 seconds with exit status 0 (successful).
+  INFO [8fe400a7] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118210025 as ec2-user@54.91.116.23
+ DEBUG [8fe400a7] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230118210025 )
+  INFO [8fe400a7] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [2a410e63] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118210025 as ec2-user@54.91.116.23
+ DEBUG [2a410e63] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230118210025 )
+  INFO [2a410e63] Finished in 0.254 seconds with exit status 0 (successful).
+ DEBUG [8b20b052] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [8b20b052] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [8b20b052] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [f219386d] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [f219386d] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-d3421466ab1af106404a.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [f219386d] 	e424c959df33596adeae7c4535462a2ba7cd0188
+ DEBUG [f219386d] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [9cb8c385] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9cb8c385] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi
+ DEBUG [9cb8c385] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [6b53c986] Running /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION as ec2-user@54.91.116.23
+ DEBUG [6b53c986] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "e424c959df33596adeae7c4535462a2ba7cd0188" > REVISION )
+  INFO [6b53c986] Finished in 0.249 seconds with exit status 0 (successful).
+ DEBUG [0e350a51] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [0e350a51] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi
+ DEBUG [0e350a51] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [29fa377d] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [29fa377d] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [29fa377d] Finished in 0.585 seconds with exit status 0 (successful).
+  INFO [1f29b37d] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [1f29b37d] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [1f29b37d] Finished in 0.611 seconds with exit status 0 (successful).
+  INFO [139fcec9] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [139fcec9] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [139fcec9] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [840a1863] Running if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [840a1863] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230118210025; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230118210025'" 1>&2; false; fi
+ DEBUG [840a1863] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [87a33dc9] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [87a33dc9] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [87a33dc9] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [87a33dc9] 	The following gems are missing
+ DEBUG [87a33dc9] 	 * eventmachine (1.2.7)
+ DEBUG [87a33dc9] 	 * faye-websocket (0.11.1)
+ DEBUG [87a33dc9] 	 * appium_lib_core (6.0.0)
+ DEBUG [87a33dc9] 	 * appium_lib (12.2.0)
+ DEBUG [87a33dc9] 	 * selenium-cucumber (3.1.5)
+ DEBUG [87a33dc9] 	Install missing gems with `bundle install`
+ DEBUG [87a33dc9] Finished in 0.677 seconds with exit status 1 (failed).
+  INFO [f96efd15] Running /usr/bin/env bundle install --jobs 4 --quiet as ec2-user@54.91.116.23
+ DEBUG [f96efd15] Command: cd /home/ec2-user/code_breaker/releases/20230118210025 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle install --jobs 4 --quiet )
+ DEBUG [f96efd15] 	Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+/home/ec2-user/.asdf/installs/ruby/2.7.5/bin/ruby -I
+/home/ec2-user/.asdf/installs/ruby/2.7.5/lib/ruby/2.7.0 -r
+./siteconf20230118-9547-e6xk38.rb extconf.rb
+checking for -lcrypto... no
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... yes
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... yes
+checking for accept4() in sys/socket.h... yes
+checking for SOCK_CLOEXEC in sys/socket.h... yes
+checking for sys/event.h... no
+checking for epoll_create() in sys/epoll.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=
+creating Makefile
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory:
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+make: g++: Command not found
+make: *** [binder.o] Error 127
+
+make failed, exit code 2
+
+Gem files will remain installed in
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/gems/eventmachine-1.2.7 for
+inspection.
+Results logged to
+/home/ec2-user/code_breaker/shared/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/eventmachine-1.2.7/gem_make.out
+
+An error occurred while installing eventmachine (1.2.7), and Bundler cannot
+continue.
+Make sure that `gem install eventmachine -v '1.2.7' --source
+'https://rubygems.org/'` succeeds before bundling.
+
+In Gemfile:
+  selenium-cucumber was resolved to 3.1.5, which depends on
+    appium_lib was resolved to 12.2.0, which depends on
+      appium_lib_core was resolved to 6.0.0, which depends on
+        faye-websocket was resolved to 0.11.1, which depends on
+          eventmachine

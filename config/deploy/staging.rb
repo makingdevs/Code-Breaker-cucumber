@@ -1,4 +1,6 @@
 server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
+set :branch, "stage"
+
 
 
 # server-based syntax

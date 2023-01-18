@@ -5,6 +5,7 @@ set :application, "code_breaker"
 set :repo_url, "git@github.com:makingdevs/Code-Breaker-cucumber.git"
 set :deploy_to, "/home/ec2-user/code_breaker"
 set :ssh_options, { :forward_agent => true }
+set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 
 
 

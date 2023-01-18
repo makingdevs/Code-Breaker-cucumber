@@ -16,3 +16,7 @@ gem "capistrano", "~> 3.17"
 gem "capistrano-bundler", "~> 2.1"
 
 gem "capistrano-passenger", "~> 0.2.1"
+
+gem "ed25519", "~> 1.3"
+
+gem "bcrypt_pbkdf", "~> 1.1"
