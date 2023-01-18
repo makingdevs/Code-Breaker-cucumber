@@ -23,9 +23,12 @@ GEM
       capistrano (~> 3.1)
     capistrano-passenger (0.2.1)
       capistrano (~> 3.0)
+
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+
+
     capybara (3.38.0)
       addressable
       matrix
@@ -149,11 +152,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+
   bcrypt_pbkdf (~> 1.1)
   capistrano (~> 3.17)
   capistrano-bundler (~> 2.1)
   capistrano-passenger (~> 0.2.1)
   capistrano-rvm (~> 0.1.2)
+
   capybara
   cucumber (~> 8.0)
   ed25519 (~> 1.3)

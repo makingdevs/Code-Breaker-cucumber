@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
 set :branch, "stage"
 
@@ -34,6 +35,8 @@ after 'deploy:published', 'deploy:start_server'
 
 
 
+=======
+>>>>>>> f285cd0 (installing capistrano and passenger)
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
