@@ -1,3 +1,6 @@
+server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
+
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
