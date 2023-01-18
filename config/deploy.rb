@@ -3,6 +3,10 @@ lock "~> 3.17.1"
 
 set :application, "code_breaker"
 set :repo_url, "git@github.com:makingdevs/Code-Breaker-cucumber.git"
+set :deploy_to, "/home/ec2-user/code_breaker"
+set :ssh_options, { :forward_agent => true }
+
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
