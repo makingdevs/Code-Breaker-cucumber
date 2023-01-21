@@ -19,29 +19,41 @@ set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 set :passenger_restart_command, 'passenger:restart'
 
 namespace :deploy do
-  task :restart do
-    on roles(:web) do
-      invoke fetch(:passenger_restart_command)
+  task :start_passenger do
+    on roles(:all) do
+      execute "cd #{deploy_to}/current && bundle exec passenger start -p 4567 --environment staging --daemonize"
+      info "Hector no no es gei"
     end
   end
-  after :publishing, :restart
 end
 
-namespace :deploy do  
-  task :make_files do
-    on roles(:all) do
-      execute :touch, "#{current_path}/jalahdtpm.md"      
-    end
-  end  
-end
+after 'deploy:log_revision', 'deploy:start_passenger'
 
-namespace :deploy do  
-  task :write_files do
-    on roles(:all) do
-      execute "echo 'Erick es gei' >> #{current_path}/jalahdtpm.md"      
-    end
-  end  
-end
+
+# namespace :deploy do
+#   task :restart do
+#     on roles(:web) do
+#       invoke fetch(:passenger_restart_command)
+#     end
+#   end
+#   after :publishing, :restart
+# end
+
+# namespace :deploy do  
+#   task :make_files do
+#     on roles(:all) do
+#       execute :touch, "#{current_path}/jalahdtpm.md"      
+#     end
+#   end  
+# end
+
+# namespace :deploy do  
+#   task :write_files do
+#     on roles(:all) do
+#       execute "echo 'Erick es gei' >> #{current_path}/jalahdtpm.md"      
+#     end
+#   end  
+# end
 
 
 # Default branch is :master
