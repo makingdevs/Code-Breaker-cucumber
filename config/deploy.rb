@@ -21,12 +21,17 @@ set :passenger_restart_command, 'passenger:restart'
 namespace :deploy do
   task :start_passenger do
     on roles(:all) do
-      execute "pkill nginx"
-      info "Killed***********************"
+      begin
+        execute "pkill nginx"
+        info "Killed***********************"
+      rescue
+        info "Error killing nginx process, continuing with the task"
+      end
       execute "cd #{deploy_to}/current && bundle exec passenger start -p 4567 --environment staging --daemonize"
     end
   end
 end
+
 
 after 'deploy:log_revision', 'deploy:start_passenger'
 
