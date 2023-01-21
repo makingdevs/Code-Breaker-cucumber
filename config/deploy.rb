@@ -17,6 +17,8 @@ set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 
 
 set :passenger_restart_command, 'passenger:restart'
+set :puerto, '4567'
+set :enviroment, '4567'
 
 namespace :deploy do
   task :start_passenger do
@@ -27,7 +29,7 @@ namespace :deploy do
       rescue
         info "Error killing nginx process, continuing with the task"
       end
-      execute "cd #{deploy_to}/current && bundle exec passenger start -p 4567 --environment staging --daemonize"
+      execute "cd #{deploy_to}/current && bundle exec passenger start -p #{puerto} --environment #{staging} --daemonize"
     end
   end
 end
