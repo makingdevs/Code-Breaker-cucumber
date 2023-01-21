@@ -2065,3 +2065,569 @@ In Gemfile:
   INFO [329b85b2] Running /usr/bin/env echo "Branch stage (at e424c959df33596adeae7c4535462a2ba7cd0188) deployed as release 20230118222234 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
  DEBUG [329b85b2] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at e424c959df33596adeae7c4535462a2ba7cd0188) deployed as release 20230118222234 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
   INFO [329b85b2] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 11:37:36 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [113bd3e8] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [113bd3e8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [113bd3e8] Finished in 1.403 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-b304595c5ddf27602cc8.sh 0.0%
+  INFO Uploading /tmp/git-ssh-b304595c5ddf27602cc8.sh 100.0%
+  INFO [d2a3224c] Running /usr/bin/env chmod 700 /tmp/git-ssh-b304595c5ddf27602cc8.sh as ec2-user@54.91.116.23
+ DEBUG [d2a3224c] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-b304595c5ddf27602cc8.sh )
+  INFO [d2a3224c] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [3a7681c0] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [3a7681c0] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [3a7681c0] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [3a7681c0] Finished in 0.831 seconds with exit status 0 (successful).
+  INFO [69ff74d2] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [69ff74d2] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [69ff74d2] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [219cb7f3] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [219cb7f3] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [219cb7f3] Finished in 0.312 seconds with exit status 0 (successful).
+ DEBUG [ce2f89de] Running /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null as ec2-user@54.91.116.23
+ DEBUG [ce2f89de] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null )
+ DEBUG [ce2f89de] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [ce2f89de] Finished in 0.339 seconds with exit status 0 (successful).
+ DEBUG [05f70076] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [05f70076] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [05f70076] Finished in 0.315 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [91f1ce33] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [91f1ce33] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [91f1ce33] Finished in 0.312 seconds with exit status 0 (successful).
+  INFO [52f77c58] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [52f77c58] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [52f77c58] Finished in 0.334 seconds with exit status 0 (successful).
+  INFO [12e0d653] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [12e0d653] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env git remote update --prune )
+  INFO [12e0d653] Finished in 0.810 seconds with exit status 0 (successful).
+ DEBUG [b3d85a79] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [b3d85a79] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [b3d85a79] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [26cc5182] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121173740 as ec2-user@54.91.116.23
+ DEBUG [26cc5182] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121173740 )
+  INFO [26cc5182] Finished in 0.312 seconds with exit status 0 (successful).
+  INFO [697a9504] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121173740 as ec2-user@54.91.116.23
+ DEBUG [697a9504] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121173740 )
+  INFO [697a9504] Finished in 0.340 seconds with exit status 0 (successful).
+ DEBUG [07771ada] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [07771ada] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [07771ada] Finished in 0.318 seconds with exit status 0 (successful).
+ DEBUG [d39bd591] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [d39bd591] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-b304595c5ddf27602cc8.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [d39bd591] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [d39bd591] Finished in 0.323 seconds with exit status 0 (successful).
+ DEBUG [38645f04] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [38645f04] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi
+ DEBUG [38645f04] Finished in 0.318 seconds with exit status 0 (successful).
+  INFO [40a0c459] Running /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION as ec2-user@54.91.116.23
+ DEBUG [40a0c459] Command: cd /home/ec2-user/code_breaker/releases/20230121173740 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION )
+  INFO [40a0c459] Finished in 0.309 seconds with exit status 0 (successful).
+ DEBUG [641432b9] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [641432b9] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi
+ DEBUG [641432b9] Finished in 0.328 seconds with exit status 0 (successful).
+  INFO [39bb911b] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [39bb911b] Command: cd /home/ec2-user/code_breaker/releases/20230121173740 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [39bb911b] Finished in 0.608 seconds with exit status 0 (successful).
+  INFO [a981bac8] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [a981bac8] Command: cd /home/ec2-user/code_breaker/releases/20230121173740 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [a981bac8] Finished in 0.708 seconds with exit status 0 (successful).
+  INFO [3588e0c7] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [3588e0c7] Command: cd /home/ec2-user/code_breaker/releases/20230121173740 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [3588e0c7] Finished in 0.615 seconds with exit status 0 (successful).
+ DEBUG [bc93278f] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [bc93278f] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121173740; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121173740'" 1>&2; false; fi
+ DEBUG [bc93278f] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG [5dd2f582] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [5dd2f582] Command: cd /home/ec2-user/code_breaker/releases/20230121173740 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [5dd2f582] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [5dd2f582] 	The Gemfile's dependencies are satisfied
+ DEBUG [5dd2f582] Finished in 0.694 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [da9329b1] Running /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121173740 /home/ec2-user/code_breaker/releases/current as ec2-user@54.91.116.23
+ DEBUG [da9329b1] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121173740 /home/ec2-user/code_breaker/releases/current )
+  INFO [da9329b1] Finished in 0.317 seconds with exit status 0 (successful).
+  INFO [d13717df] Running /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker as ec2-user@54.91.116.23
+ DEBUG [d13717df] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker )
+  INFO [d13717df] Finished in 0.315 seconds with exit status 0 (successful).
+ DEBUG [5166061b] Running /usr/bin/env ls -x /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [5166061b] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ls -x /home/ec2-user/code_breaker/releases )
+ DEBUG [5166061b] 	20230119000828	20230120052104	20230120060537	20230120060747	20230121043602
+20230121173740
+ DEBUG [5166061b] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.91.116.23
+ DEBUG [75855584] Running [ -d /home/ec2-user/code_breaker/current ] as ec2-user@54.91.116.23
+ DEBUG [75855584] Command: [ -d /home/ec2-user/code_breaker/current ]
+ DEBUG [75855584] Finished in 0.313 seconds with exit status 0 (successful).
+ DEBUG [afa9bca9] Running /usr/bin/env readlink /home/ec2-user/code_breaker/current as ec2-user@54.91.116.23
+ DEBUG [afa9bca9] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env readlink /home/ec2-user/code_breaker/current )
+ DEBUG [afa9bca9] 	/home/ec2-user/code_breaker/releases/20230121173740
+ DEBUG [afa9bca9] Finished in 0.323 seconds with exit status 0 (successful).
+  INFO [4c61129d] Running /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230119000828 as ec2-user@54.91.116.23
+ DEBUG [4c61129d] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230119000828 )
+  INFO [4c61129d] Finished in 0.317 seconds with exit status 0 (successful).
+ DEBUG [a7040713] Running if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [a7040713] Command: if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi
+ DEBUG [a7040713] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [747a2d50] Running /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121173740 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
+ DEBUG [747a2d50] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121173740 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
+  INFO [747a2d50] Finished in 0.321 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:28:24 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6db98f84] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [6db98f84] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [6db98f84] Finished in 1.213 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-0673e0723711cc11ec38.sh 0.0%
+  INFO Uploading /tmp/git-ssh-0673e0723711cc11ec38.sh 100.0%
+  INFO [c6c1250f] Running /usr/bin/env chmod 700 /tmp/git-ssh-0673e0723711cc11ec38.sh as ec2-user@54.91.116.23
+ DEBUG [c6c1250f] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-0673e0723711cc11ec38.sh )
+  INFO [c6c1250f] Finished in 0.304 seconds with exit status 0 (successful).
+  INFO [940b17f8] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [940b17f8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [940b17f8] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [940b17f8] Finished in 0.755 seconds with exit status 0 (successful).
+  INFO [85d420cc] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [85d420cc] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [85d420cc] Finished in 0.263 seconds with exit status 0 (successful).
+ DEBUG [aec27f0d] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [aec27f0d] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [aec27f0d] Finished in 0.312 seconds with exit status 0 (successful).
+ DEBUG [4b18f98f] Running /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null as ec2-user@54.91.116.23
+ DEBUG [4b18f98f] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null )
+ DEBUG [4b18f98f] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [4b18f98f] Finished in 0.326 seconds with exit status 0 (successful).
+ DEBUG [7697108a] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [7697108a] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [7697108a] Finished in 0.310 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [06eeb802] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [06eeb802] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [06eeb802] Finished in 0.302 seconds with exit status 0 (successful).
+  INFO [e33631d5] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [e33631d5] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [e33631d5] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO [7650dd31] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [7650dd31] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env git remote update --prune )
+  INFO [7650dd31] Finished in 0.792 seconds with exit status 0 (successful).
+ DEBUG [98322f5b] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [98322f5b] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [98322f5b] Finished in 0.263 seconds with exit status 0 (successful).
+  INFO [a9cedd52] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121182828 as ec2-user@54.91.116.23
+ DEBUG [a9cedd52] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121182828 )
+  INFO [a9cedd52] Finished in 0.309 seconds with exit status 0 (successful).
+  INFO [e8d4b89b] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121182828 as ec2-user@54.91.116.23
+ DEBUG [e8d4b89b] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121182828 )
+  INFO [e8d4b89b] Finished in 0.323 seconds with exit status 0 (successful).
+ DEBUG [363131b7] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [363131b7] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [363131b7] Finished in 0.307 seconds with exit status 0 (successful).
+ DEBUG [39501458] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [39501458] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-0673e0723711cc11ec38.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [39501458] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [39501458] Finished in 0.326 seconds with exit status 0 (successful).
+ DEBUG [3bbc09bf] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [3bbc09bf] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi
+ DEBUG [3bbc09bf] Finished in 0.324 seconds with exit status 0 (successful).
+  INFO [71ebdc83] Running /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION as ec2-user@54.91.116.23
+ DEBUG [71ebdc83] Command: cd /home/ec2-user/code_breaker/releases/20230121182828 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION )
+  INFO [71ebdc83] Finished in 0.320 seconds with exit status 0 (successful).
+ DEBUG [a07fc7f0] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [a07fc7f0] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi
+ DEBUG [a07fc7f0] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [5b1b4e79] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [5b1b4e79] Command: cd /home/ec2-user/code_breaker/releases/20230121182828 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [5b1b4e79] Finished in 0.603 seconds with exit status 0 (successful).
+  INFO [79b73a05] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [79b73a05] Command: cd /home/ec2-user/code_breaker/releases/20230121182828 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [79b73a05] Finished in 0.604 seconds with exit status 0 (successful).
+  INFO [d4756b2e] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [d4756b2e] Command: cd /home/ec2-user/code_breaker/releases/20230121182828 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [d4756b2e] Finished in 0.612 seconds with exit status 0 (successful).
+ DEBUG [2a0774c0] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2a0774c0] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121182828; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121182828'" 1>&2; false; fi
+ DEBUG [2a0774c0] Finished in 0.315 seconds with exit status 0 (successful).
+ DEBUG [678ea7a1] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [678ea7a1] Command: cd /home/ec2-user/code_breaker/releases/20230121182828 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [678ea7a1] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [678ea7a1] 	The Gemfile's dependencies are satisfied
+ DEBUG [678ea7a1] Finished in 0.707 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [8209c547] Running /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121182828 /home/ec2-user/code_breaker/releases/current as ec2-user@54.91.116.23
+ DEBUG [8209c547] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121182828 /home/ec2-user/code_breaker/releases/current )
+  INFO [8209c547] Finished in 0.343 seconds with exit status 0 (successful).
+  INFO [a3269623] Running /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker as ec2-user@54.91.116.23
+ DEBUG [a3269623] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker )
+  INFO [a3269623] Finished in 0.326 seconds with exit status 0 (successful).
+ DEBUG [bd185496] Running /usr/bin/env ls -x /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [bd185496] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ls -x /home/ec2-user/code_breaker/releases )
+ DEBUG [bd185496] 	20230120052104	20230120060537	20230120060747	20230121043602	20230121173740
+20230121182828
+ DEBUG [bd185496] Finished in 0.334 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.91.116.23
+ DEBUG [c535a71d] Running [ -d /home/ec2-user/code_breaker/current ] as ec2-user@54.91.116.23
+ DEBUG [c535a71d] Command: [ -d /home/ec2-user/code_breaker/current ]
+ DEBUG [c535a71d] Finished in 0.302 seconds with exit status 0 (successful).
+ DEBUG [20516db4] Running /usr/bin/env readlink /home/ec2-user/code_breaker/current as ec2-user@54.91.116.23
+ DEBUG [20516db4] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env readlink /home/ec2-user/code_breaker/current )
+ DEBUG [20516db4] 	/home/ec2-user/code_breaker/releases/20230121182828
+ DEBUG [20516db4] Finished in 0.311 seconds with exit status 0 (successful).
+  INFO [8f14ef02] Running /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120052104 as ec2-user@54.91.116.23
+ DEBUG [8f14ef02] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120052104 )
+  INFO [8f14ef02] Finished in 0.311 seconds with exit status 0 (successful).
+ DEBUG [dbbc1fd2] Running if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [dbbc1fd2] Command: if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi
+ DEBUG [dbbc1fd2] Finished in 0.309 seconds with exit status 0 (successful).
+  INFO [a722cac2] Running /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121182828 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
+ DEBUG [a722cac2] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121182828 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
+  INFO [a722cac2] Finished in 0.305 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:40:20 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7c6dbbb0] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [7c6dbbb0] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [7c6dbbb0] Finished in 1.278 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-455625d031ee00925e48.sh 0.0%
+  INFO Uploading /tmp/git-ssh-455625d031ee00925e48.sh 100.0%
+  INFO [165d0696] Running /usr/bin/env chmod 700 /tmp/git-ssh-455625d031ee00925e48.sh as ec2-user@54.91.116.23
+ DEBUG [165d0696] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-455625d031ee00925e48.sh )
+  INFO [165d0696] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [d195b4bc] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [d195b4bc] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [d195b4bc] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [d195b4bc] Finished in 0.735 seconds with exit status 0 (successful).
+  INFO [a4d074a8] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [a4d074a8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [a4d074a8] Finished in 0.264 seconds with exit status 0 (successful).
+ DEBUG [07e14379] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [07e14379] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [07e14379] Finished in 0.297 seconds with exit status 0 (successful).
+ DEBUG [9b6e2b34] Running /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null as ec2-user@54.91.116.23
+ DEBUG [9b6e2b34] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null )
+ DEBUG [9b6e2b34] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [9b6e2b34] Finished in 0.308 seconds with exit status 0 (successful).
+ DEBUG [6a05b264] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [6a05b264] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [6a05b264] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [bb4076ec] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [bb4076ec] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [bb4076ec] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [28122f28] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [28122f28] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [28122f28] Finished in 0.297 seconds with exit status 0 (successful).
+  INFO [129a785c] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [129a785c] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env git remote update --prune )
+  INFO [129a785c] Finished in 0.776 seconds with exit status 0 (successful).
+ DEBUG [91d3cf18] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [91d3cf18] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [91d3cf18] Finished in 0.267 seconds with exit status 0 (successful).
+  INFO [72633596] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121184024 as ec2-user@54.91.116.23
+ DEBUG [72633596] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121184024 )
+  INFO [72633596] Finished in 0.307 seconds with exit status 0 (successful).
+  INFO [4c43a7ce] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121184024 as ec2-user@54.91.116.23
+ DEBUG [4c43a7ce] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121184024 )
+  INFO [4c43a7ce] Finished in 0.312 seconds with exit status 0 (successful).
+ DEBUG [bb2ee2b5] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [bb2ee2b5] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [bb2ee2b5] Finished in 0.307 seconds with exit status 0 (successful).
+ DEBUG [a5e5faac] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [a5e5faac] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-455625d031ee00925e48.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [a5e5faac] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [a5e5faac] Finished in 0.320 seconds with exit status 0 (successful).
+ DEBUG [1938a53d] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [1938a53d] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi
+ DEBUG [1938a53d] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [b719a00c] Running /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION as ec2-user@54.91.116.23
+ DEBUG [b719a00c] Command: cd /home/ec2-user/code_breaker/releases/20230121184024 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION )
+  INFO [b719a00c] Finished in 0.319 seconds with exit status 0 (successful).
+ DEBUG [40bd5b86] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [40bd5b86] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi
+ DEBUG [40bd5b86] Finished in 0.307 seconds with exit status 0 (successful).
+  INFO [9bfc0adf] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [9bfc0adf] Command: cd /home/ec2-user/code_breaker/releases/20230121184024 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [9bfc0adf] Finished in 0.593 seconds with exit status 0 (successful).
+  INFO [a5373944] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [a5373944] Command: cd /home/ec2-user/code_breaker/releases/20230121184024 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [a5373944] Finished in 0.599 seconds with exit status 0 (successful).
+  INFO [bc0b1516] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [bc0b1516] Command: cd /home/ec2-user/code_breaker/releases/20230121184024 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [bc0b1516] Finished in 0.604 seconds with exit status 0 (successful).
+ DEBUG [e0ad25e0] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [e0ad25e0] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184024; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184024'" 1>&2; false; fi
+ DEBUG [e0ad25e0] Finished in 0.310 seconds with exit status 0 (successful).
+ DEBUG [827cf306] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [827cf306] Command: cd /home/ec2-user/code_breaker/releases/20230121184024 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [827cf306] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [827cf306] 	The Gemfile's dependencies are satisfied
+ DEBUG [827cf306] Finished in 0.715 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [55493bae] Running /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121184024 /home/ec2-user/code_breaker/releases/current as ec2-user@54.91.116.23
+ DEBUG [55493bae] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121184024 /home/ec2-user/code_breaker/releases/current )
+  INFO [55493bae] Finished in 0.323 seconds with exit status 0 (successful).
+  INFO [ae5d2f75] Running /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker as ec2-user@54.91.116.23
+ DEBUG [ae5d2f75] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker )
+  INFO [ae5d2f75] Finished in 0.315 seconds with exit status 0 (successful).
+ DEBUG [b7e277ef] Running /usr/bin/env ls -x /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [b7e277ef] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ls -x /home/ec2-user/code_breaker/releases )
+ DEBUG [b7e277ef] 	20230120060537	20230120060747	20230121043602	20230121173740	20230121182828
+20230121184024
+ DEBUG [b7e277ef] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.91.116.23
+ DEBUG [02b9e3c6] Running [ -d /home/ec2-user/code_breaker/current ] as ec2-user@54.91.116.23
+ DEBUG [02b9e3c6] Command: [ -d /home/ec2-user/code_breaker/current ]
+ DEBUG [02b9e3c6] Finished in 0.308 seconds with exit status 0 (successful).
+ DEBUG [1f1c6de2] Running /usr/bin/env readlink /home/ec2-user/code_breaker/current as ec2-user@54.91.116.23
+ DEBUG [1f1c6de2] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env readlink /home/ec2-user/code_breaker/current )
+ DEBUG [1f1c6de2] 	/home/ec2-user/code_breaker/releases/20230121184024
+ DEBUG [1f1c6de2] Finished in 0.305 seconds with exit status 0 (successful).
+  INFO [5445c58a] Running /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120060537 as ec2-user@54.91.116.23
+ DEBUG [5445c58a] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120060537 )
+  INFO [5445c58a] Finished in 0.324 seconds with exit status 0 (successful).
+ DEBUG [b3cbf124] Running if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [b3cbf124] Command: if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi
+ DEBUG [b3cbf124] Finished in 0.303 seconds with exit status 0 (successful).
+  INFO [d36394ae] Running /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121184024 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
+ DEBUG [d36394ae] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121184024 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
+  INFO [d36394ae] Finished in 0.311 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:42:08 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1b7f9a3c] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [1b7f9a3c] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [1b7f9a3c] Finished in 7.771 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-132e26b9806408fdc903.sh 0.0%
+  INFO Uploading /tmp/git-ssh-132e26b9806408fdc903.sh 100.0%
+  INFO [4bc42ef1] Running /usr/bin/env chmod 700 /tmp/git-ssh-132e26b9806408fdc903.sh as ec2-user@54.91.116.23
+ DEBUG [4bc42ef1] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-132e26b9806408fdc903.sh )
+  INFO [4bc42ef1] Finished in 0.314 seconds with exit status 0 (successful).
+  INFO [11dd95c3] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [11dd95c3] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [11dd95c3] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [11dd95c3] Finished in 0.780 seconds with exit status 0 (successful).
+  INFO [fc4021c2] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [fc4021c2] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [fc4021c2] Finished in 0.274 seconds with exit status 0 (successful).
+ DEBUG [7a8de74a] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [7a8de74a] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [7a8de74a] Finished in 0.304 seconds with exit status 0 (successful).
+ DEBUG [875ebb69] Running /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null as ec2-user@54.91.116.23
+ DEBUG [875ebb69] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null )
+ DEBUG [875ebb69] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [875ebb69] Finished in 0.320 seconds with exit status 0 (successful).
+ DEBUG [ef8d1a84] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [ef8d1a84] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [ef8d1a84] Finished in 0.325 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [2d1fa586] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2d1fa586] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [2d1fa586] Finished in 0.307 seconds with exit status 0 (successful).
+  INFO [9f96c56d] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [9f96c56d] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [9f96c56d] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [0f28195e] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [0f28195e] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env git remote update --prune )
+  INFO [0f28195e] Finished in 0.786 seconds with exit status 0 (successful).
+ DEBUG [65d6ca4a] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [65d6ca4a] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [65d6ca4a] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [9581296a] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121184219 as ec2-user@54.91.116.23
+ DEBUG [9581296a] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121184219 )
+  INFO [9581296a] Finished in 0.301 seconds with exit status 0 (successful).
+  INFO [5d13b626] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121184219 as ec2-user@54.91.116.23
+ DEBUG [5d13b626] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121184219 )
+  INFO [5d13b626] Finished in 0.323 seconds with exit status 0 (successful).
+ DEBUG [453675e6] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [453675e6] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [453675e6] Finished in 0.311 seconds with exit status 0 (successful).
+ DEBUG [e0beb719] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [e0beb719] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-132e26b9806408fdc903.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [e0beb719] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [e0beb719] Finished in 0.317 seconds with exit status 0 (successful).
+ DEBUG [9c2011eb] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9c2011eb] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi
+ DEBUG [9c2011eb] Finished in 0.314 seconds with exit status 0 (successful).
+  INFO [043fd45d] Running /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION as ec2-user@54.91.116.23
+ DEBUG [043fd45d] Command: cd /home/ec2-user/code_breaker/releases/20230121184219 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION )
+  INFO [043fd45d] Finished in 0.314 seconds with exit status 0 (successful).
+ DEBUG [042e9f0d] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [042e9f0d] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi
+ DEBUG [042e9f0d] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO [5ccad51e] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [5ccad51e] Command: cd /home/ec2-user/code_breaker/releases/20230121184219 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [5ccad51e] Finished in 0.594 seconds with exit status 0 (successful).
+  INFO [2b01b4ff] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [2b01b4ff] Command: cd /home/ec2-user/code_breaker/releases/20230121184219 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [2b01b4ff] Finished in 0.606 seconds with exit status 0 (successful).
+  INFO [776f0ab1] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [776f0ab1] Command: cd /home/ec2-user/code_breaker/releases/20230121184219 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [776f0ab1] Finished in 0.596 seconds with exit status 0 (successful).
+ DEBUG [2d520dc8] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [2d520dc8] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121184219; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121184219'" 1>&2; false; fi
+ DEBUG [2d520dc8] Finished in 0.318 seconds with exit status 0 (successful).
+ DEBUG [2a3cff82] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [2a3cff82] Command: cd /home/ec2-user/code_breaker/releases/20230121184219 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [2a3cff82] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [2a3cff82] 	The Gemfile's dependencies are satisfied
+ DEBUG [2a3cff82] Finished in 0.704 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [c03fd7fc] Running /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121184219 /home/ec2-user/code_breaker/releases/current as ec2-user@54.91.116.23
+ DEBUG [c03fd7fc] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121184219 /home/ec2-user/code_breaker/releases/current )
+  INFO [c03fd7fc] Finished in 0.318 seconds with exit status 0 (successful).
+  INFO [ea5287df] Running /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker as ec2-user@54.91.116.23
+ DEBUG [ea5287df] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker )
+  INFO [ea5287df] Finished in 0.319 seconds with exit status 0 (successful).
+ DEBUG [e3ea7535] Running /usr/bin/env ls -x /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [e3ea7535] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ls -x /home/ec2-user/code_breaker/releases )
+ DEBUG [e3ea7535] 	20230120060747	20230121043602	20230121173740	20230121182828	20230121184024
+20230121184219
+ DEBUG [e3ea7535] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.91.116.23
+ DEBUG [7572533a] Running [ -d /home/ec2-user/code_breaker/current ] as ec2-user@54.91.116.23
+ DEBUG [7572533a] Command: [ -d /home/ec2-user/code_breaker/current ]
+ DEBUG [7572533a] Finished in 0.312 seconds with exit status 0 (successful).
+ DEBUG [fb8372be] Running /usr/bin/env readlink /home/ec2-user/code_breaker/current as ec2-user@54.91.116.23
+ DEBUG [fb8372be] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env readlink /home/ec2-user/code_breaker/current )
+ DEBUG [fb8372be] 	/home/ec2-user/code_breaker/releases/20230121184219
+ DEBUG [fb8372be] Finished in 0.320 seconds with exit status 0 (successful).
+  INFO [d3999134] Running /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120060747 as ec2-user@54.91.116.23
+ DEBUG [d3999134] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230120060747 )
+  INFO [d3999134] Finished in 0.319 seconds with exit status 0 (successful).
+ DEBUG [9483b763] Running if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [9483b763] Command: if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi
+ DEBUG [9483b763] Finished in 0.328 seconds with exit status 0 (successful).
+  INFO [519d1d34] Running /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121184219 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
+ DEBUG [519d1d34] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121184219 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
+  INFO [519d1d34] Finished in 0.312 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:55:43 -0600 cap staging creator:make_files
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:56:33 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a1a06cf5] Running /usr/bin/env mkdir -p /tmp as ec2-user@54.91.116.23
+ DEBUG [a1a06cf5] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /tmp )
+  INFO [a1a06cf5] Finished in 1.288 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-8b8584d95decb3340c82.sh 0.0%
+  INFO Uploading /tmp/git-ssh-8b8584d95decb3340c82.sh 100.0%
+  INFO [43988ed7] Running /usr/bin/env chmod 700 /tmp/git-ssh-8b8584d95decb3340c82.sh as ec2-user@54.91.116.23
+ DEBUG [43988ed7] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env chmod 700 /tmp/git-ssh-8b8584d95decb3340c82.sh )
+  INFO [43988ed7] Finished in 0.322 seconds with exit status 0 (successful).
+  INFO [6ed865b5] Running /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD as ec2-user@54.91.116.23
+ DEBUG [6ed865b5] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env git ls-remote git@github.com:makingdevs/Code-Breaker-cucumber.git HEAD )
+ DEBUG [6ed865b5] 	2f513f31bd6e1170cf026e1b255fb073c7d09097	HEAD
+  INFO [6ed865b5] Finished in 0.766 seconds with exit status 0 (successful).
+  INFO [bb49a0cc] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [bb49a0cc] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/shared /home/ec2-user/code_breaker/releases )
+  INFO [bb49a0cc] Finished in 0.262 seconds with exit status 0 (successful).
+ DEBUG [efba0157] Running [ -f /home/ec2-user/code_breaker/current/REVISION ] as ec2-user@54.91.116.23
+ DEBUG [efba0157] Command: [ -f /home/ec2-user/code_breaker/current/REVISION ]
+ DEBUG [efba0157] Finished in 0.309 seconds with exit status 0 (successful).
+ DEBUG [fb2722a0] Running /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null as ec2-user@54.91.116.23
+ DEBUG [fb2722a0] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env cat /home/ec2-user/code_breaker/current/REVISION 2>/dev/null )
+ DEBUG [fb2722a0] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [fb2722a0] Finished in 0.314 seconds with exit status 0 (successful).
+ DEBUG [7365c9ac] Running [ -f /home/ec2-user/code_breaker/repo/HEAD ] as ec2-user@54.91.116.23
+ DEBUG [7365c9ac] Command: [ -f /home/ec2-user/code_breaker/repo/HEAD ]
+ DEBUG [7365c9ac] Finished in 0.308 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ec2-user/code_breaker/repo
+ DEBUG [946f126e] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [946f126e] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [946f126e] Finished in 0.298 seconds with exit status 0 (successful).
+  INFO [e137c10a] Running /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git as ec2-user@54.91.116.23
+ DEBUG [e137c10a] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env git remote set-url origin git@github.com:makingdevs/Code-Breaker-cucumber.git )
+  INFO [e137c10a] Finished in 0.292 seconds with exit status 0 (successful).
+  INFO [ec07218d] Running /usr/bin/env git remote update --prune as ec2-user@54.91.116.23
+ DEBUG [ec07218d] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env git remote update --prune )
+  INFO [ec07218d] Finished in 0.783 seconds with exit status 0 (successful).
+ DEBUG [072d8667] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [072d8667] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [072d8667] Finished in 0.270 seconds with exit status 0 (successful).
+  INFO [d179266e] Running /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121185637 as ec2-user@54.91.116.23
+ DEBUG [d179266e] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env mkdir -p /home/ec2-user/code_breaker/releases/20230121185637 )
+  INFO [d179266e] Finished in 0.324 seconds with exit status 0 (successful).
+  INFO [cbea3da9] Running /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121185637 as ec2-user@54.91.116.23
+ DEBUG [cbea3da9] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env git archive stage | /usr/bin/env tar -x -f - -C /home/ec2-user/code_breaker/releases/20230121185637 )
+  INFO [cbea3da9] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG [179747d6] Running if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [179747d6] Command: if test ! -d /home/ec2-user/code_breaker/repo; then echo "Directory does not exist '/home/ec2-user/code_breaker/repo'" 1>&2; false; fi
+ DEBUG [179747d6] Finished in 0.315 seconds with exit status 0 (successful).
+ DEBUG [515a6cd3] Running /usr/bin/env git rev-list --max-count=1 stage as ec2-user@54.91.116.23
+ DEBUG [515a6cd3] Command: cd /home/ec2-user/code_breaker/repo && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-8b8584d95decb3340c82.sh" ; /usr/bin/env git rev-list --max-count=1 stage )
+ DEBUG [515a6cd3] 	461d425808fc9ce2407fc5c53835aca99269ade3
+ DEBUG [515a6cd3] Finished in 0.323 seconds with exit status 0 (successful).
+ DEBUG [c930aecf] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [c930aecf] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi
+ DEBUG [c930aecf] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [d145b838] Running /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION as ec2-user@54.91.116.23
+ DEBUG [d145b838] Command: cd /home/ec2-user/code_breaker/releases/20230121185637 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "461d425808fc9ce2407fc5c53835aca99269ade3" > REVISION )
+  INFO [d145b838] Finished in 0.316 seconds with exit status 0 (successful).
+ DEBUG [28bac374] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [28bac374] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi
+ DEBUG [28bac374] Finished in 0.310 seconds with exit status 0 (successful).
+  INFO [54c986fb] Running /usr/bin/env bundle config --local deployment true as ec2-user@54.91.116.23
+ DEBUG [54c986fb] Command: cd /home/ec2-user/code_breaker/releases/20230121185637 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local deployment true )
+  INFO [54c986fb] Finished in 0.611 seconds with exit status 0 (successful).
+  INFO [36d86743] Running /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle as ec2-user@54.91.116.23
+ DEBUG [36d86743] Command: cd /home/ec2-user/code_breaker/releases/20230121185637 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local path /home/ec2-user/code_breaker/shared/bundle )
+  INFO [36d86743] Finished in 0.596 seconds with exit status 0 (successful).
+  INFO [6b016a99] Running /usr/bin/env bundle config --local without development:test as ec2-user@54.91.116.23
+ DEBUG [6b016a99] Command: cd /home/ec2-user/code_breaker/releases/20230121185637 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle config --local without development:test )
+  INFO [6b016a99] Finished in 0.592 seconds with exit status 0 (successful).
+ DEBUG [3732ef79] Running if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [3732ef79] Command: if test ! -d /home/ec2-user/code_breaker/releases/20230121185637; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases/20230121185637'" 1>&2; false; fi
+ DEBUG [3732ef79] Finished in 0.307 seconds with exit status 0 (successful).
+ DEBUG [9bca41b9] Running /usr/bin/env bundle check as ec2-user@54.91.116.23
+ DEBUG [9bca41b9] Command: cd /home/ec2-user/code_breaker/releases/20230121185637 && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env bundle check )
+ DEBUG [9bca41b9] 	Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.4.3). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.4.3`.
+ DEBUG [9bca41b9] 	The Gemfile's dependencies are satisfied
+ DEBUG [9bca41b9] Finished in 0.706 seconds with exit status 0 (successful).
+  INFO The Gemfile's dependencies are satisfied, skipping installation
+  INFO [6bec1704] Running /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121185637 /home/ec2-user/code_breaker/releases/current as ec2-user@54.91.116.23
+ DEBUG [6bec1704] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ln -s /home/ec2-user/code_breaker/releases/20230121185637 /home/ec2-user/code_breaker/releases/current )
+  INFO [6bec1704] Finished in 0.312 seconds with exit status 0 (successful).
+  INFO [d8ad2c84] Running /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker as ec2-user@54.91.116.23
+ DEBUG [d8ad2c84] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env mv /home/ec2-user/code_breaker/releases/current /home/ec2-user/code_breaker )
+  INFO [d8ad2c84] Finished in 0.314 seconds with exit status 0 (successful).
+ DEBUG [a7d83fe8] Running /usr/bin/env ls -x /home/ec2-user/code_breaker/releases as ec2-user@54.91.116.23
+ DEBUG [a7d83fe8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env ls -x /home/ec2-user/code_breaker/releases )
+ DEBUG [a7d83fe8] 	20230121043602	20230121173740	20230121182828	20230121184024	20230121184219
+20230121185637
+ DEBUG [a7d83fe8] Finished in 0.324 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 54.91.116.23
+ DEBUG [f468034b] Running [ -d /home/ec2-user/code_breaker/current ] as ec2-user@54.91.116.23
+ DEBUG [f468034b] Command: [ -d /home/ec2-user/code_breaker/current ]
+ DEBUG [f468034b] Finished in 0.317 seconds with exit status 0 (successful).
+ DEBUG [650503c8] Running /usr/bin/env readlink /home/ec2-user/code_breaker/current as ec2-user@54.91.116.23
+ DEBUG [650503c8] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env readlink /home/ec2-user/code_breaker/current )
+ DEBUG [650503c8] 	/home/ec2-user/code_breaker/releases/20230121185637
+ DEBUG [650503c8] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO [0a46f3df] Running /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230121043602 as ec2-user@54.91.116.23
+ DEBUG [0a46f3df] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env rm -rf /home/ec2-user/code_breaker/releases/20230121043602 )
+  INFO [0a46f3df] Finished in 0.302 seconds with exit status 0 (successful).
+ DEBUG [60df58fe] Running if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi as ec2-user@54.91.116.23
+ DEBUG [60df58fe] Command: if test ! -d /home/ec2-user/code_breaker/releases; then echo "Directory does not exist '/home/ec2-user/code_breaker/releases'" 1>&2; false; fi
+ DEBUG [60df58fe] Finished in 0.335 seconds with exit status 0 (successful).
+  INFO [1dd3ef4f] Running /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121185637 by ghector6" >> /home/ec2-user/code_breaker/revisions.log as ec2-user@54.91.116.23
+ DEBUG [1dd3ef4f] Command: cd /home/ec2-user/code_breaker/releases && ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env echo "Branch stage (at 461d425808fc9ce2407fc5c53835aca99269ade3) deployed as release 20230121185637 by ghector6" >> /home/ec2-user/code_breaker/revisions.log )
+  INFO [1dd3ef4f] Finished in 0.317 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 12:58:44 -0600 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 13:06:27 -0600 cap staging deploy:make_files
+  INFO ---------------------------------------------------------------------------
+  INFO [4f89b22b] Running /usr/bin/env touch /home/ec2-user/code_breaker/current/jalahdtpm.md as ec2-user@54.91.116.23
+ DEBUG [4f89b22b] Command: ( export PATH="~/.asdf/shims:~/.asdf/bin:$PATH" ; /usr/bin/env touch /home/ec2-user/code_breaker/current/jalahdtpm.md )
+  INFO [4f89b22b] Finished in 1.197 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 13:10:34 -0600 cap staging deploy:restart
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-01-21 13:11:05 -0600 cap staging deploy:write_files
+  INFO ---------------------------------------------------------------------------
+  INFO [9e16778f] Running echo 'Erick es gei' >> /home/ec2-user/code_breaker/current/jalahdtpm.md as ec2-user@54.91.116.23
+ DEBUG [9e16778f] Command: echo 'Erick es gei' >> /home/ec2-user/code_breaker/current/jalahdtpm.md
+  INFO [9e16778f] Finished in 1.228 seconds with exit status 0 (successful).

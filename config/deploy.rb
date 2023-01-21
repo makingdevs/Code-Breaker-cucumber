@@ -1,12 +1,47 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
+set :passenger_roles => %{web app}
+set :passenger_restart_runner, :sequence
+set :passenger_restart_wait, 5
+set :passenger_restart_limit, 2
+set :passenger_restart_with_sudo, false
+set :passenger_environment_variables, {}
+set :passenger_restart_command, 'passenger-config restart-app'
+set :passenger_restart_options, -> { "#{deploy_to} --ignore-app-not-running" }
 set :application, "code_breaker"
 set :repo_url, "git@github.com:makingdevs/Code-Breaker-cucumber.git"
 set :deploy_to, "/home/ec2-user/code_breaker"
 set :ssh_options, { :forward_agent => true }
 set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 
+
+set :passenger_restart_command, 'passenger:restart'
+
+namespace :deploy do
+  task :restart do
+    on roles(:web) do
+      invoke fetch(:passenger_restart_command)
+    end
+  end
+  after :publishing, :restart
+end
+
+namespace :deploy do  
+  task :make_files do
+    on roles(:all) do
+      execute :touch, "#{current_path}/jalahdtpm.md"      
+    end
+  end  
+end
+
+namespace :deploy do  
+  task :write_files do
+    on roles(:all) do
+      execute "echo 'Erick es gei' >> #{current_path}/jalahdtpm.md"      
+    end
+  end  
+end
 
 
 # Default branch is :master
