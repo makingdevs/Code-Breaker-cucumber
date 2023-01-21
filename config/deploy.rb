@@ -21,8 +21,12 @@ set :passenger_restart_command, 'passenger:restart'
 namespace :deploy do
   task :start_passenger do
     on roles(:all) do
-      execute "cd #{deploy_to}/current && bundle exec passenger start -p 4567 --environment staging --daemonize"
+      if test("[ -f #{deploy_to}/passenger.4567.pid.lock ]")
+      	execute "cd #{deploy_to}/current && bundle exec passenger restart -p 4567 --environment staging --daemonize"
+      else
+        execute "cd #{deploy_to}/current && bundle exec passenger start -p 4567 --environment staging --daemonize"
       info "Hector no no es gei"
+      end
     end
   end
 end
