@@ -38,4 +38,10 @@ describe CodeBreaker do
             expect(play.try("7519")).to eq "____"
         end
     end
+    context "Shows the player name" do 
+        it "returns Default user as user" do 
+            play = CodeBreaker.new("1234")
+            expect(play.player).to eq("Default userssss")
+        end
+    end
 end
