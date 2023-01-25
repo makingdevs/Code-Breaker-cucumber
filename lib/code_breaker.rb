@@ -1,11 +1,12 @@
 class CodeBreaker
 
   attr_reader :win, :result
-  attr_accessor :attemps
+  attr_accessor :attemps, :player
 
   def initialize(result)
     @result = result.chars
     @attemps = 10
+    @player ||= "Default user" 
   end
   def try(guess)
     @attemps -= 1
