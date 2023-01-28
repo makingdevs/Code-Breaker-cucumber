@@ -11,32 +11,11 @@ set :passenger_restart_command, 'passenger-config restart-app'
 set :passenger_restart_options, -> { "#{deploy_to} --ignore-app-not-running" }
 set :application, "code_breaker"
 set :repo_url, "git@github.com:makingdevs/Code-Breaker-cucumber.git"
-set :deploy_to, "/home/ec2-user/code_breaker"
 set :ssh_options, { :forward_agent => true }
 set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 
 
 set :passenger_restart_command, 'passenger:restart'
-set :puerto, '4567'
-set :enviroment, '4567'
-
-namespace :deploy do
-  task :start_passenger do
-    on roles(:all) do
-      begin
-        execute "pkill nginx"
-        info "Killed***********************"
-      rescue
-        info "Error killing nginx process, continuing with the task"
-      end
-      execute "cd #{deploy_to}/current && bundle exec passenger start -p #{puerto} --environment #{staging} --daemonize"
-    end
-  end
-end
-
-
-after 'deploy:log_revision', 'deploy:start_passenger'
-
 
 # namespace :deploy do
 #   task :restart do

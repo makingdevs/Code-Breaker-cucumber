@@ -1,6 +1,27 @@
 server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
 set :branch, "stage"
 
+set :deploy_to, "/home/ec2-user/code_breaker"
+set :puerto, '4567'
+set :enviroment, 'staging'
+
+namespace :deploy do
+  task :start_passenger do
+    on roles(:all) do
+      begin
+        execute "pkill nginx"
+        info "Killed***********************"
+      rescue
+        info "Error killing nginx process, continuing with the task"
+      end
+      execute "cd #{deploy_to}/current && bundle exec passenger start -p #{puerto} --environment #{enviroment} --daemonize"
+    end
+  end
+end
+
+
+after 'deploy:log_revision', 'deploy:start_passenger'
+
 
 
 # server-based syntax

@@ -1,5 +1,27 @@
 server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
 set :branch, "main"
+
+set :deploy_to, "/home/ec2-user/prod_code_breaker"
+set :puerto, '80'
+set :enviroment, 'pro'
+
+namespace :deploy do
+  task :start_passenger do
+    on roles(:all) do
+      begin
+        execute "pkill nginx"
+        info "Killed***********************"
+      rescue
+        info "Error killing nginx process, continuing with the task"
+      end
+      execute "cd #{deploy_to}/current && bundle exec passenger start -p #{puerto} --daemonize"
+    end
+  end
+end
+
+
+after 'deploy:log_revision', 'deploy:start_passenger'
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
