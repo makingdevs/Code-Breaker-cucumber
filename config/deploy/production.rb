@@ -14,7 +14,7 @@ namespace :deploy do
       rescue
         info "Error killing nginx process, continuing with the task"
       end
-      execute "cd #{deploy_to}/current && bundle exec passenger start -p #{puerto} --daemonize"
+      execute "cd #{fetch :deploy_to }/current && bundle exec passenger start -p #{fetch :puerto} --daemonize"
     end
   end
 end
