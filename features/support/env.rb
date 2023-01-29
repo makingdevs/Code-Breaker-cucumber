@@ -40,10 +40,3 @@ rescue Exception => e
   puts e.message
   Process.exit(0)
 end
-
-at_exit do
-  unless $pid.nil?
-    Process.kill "TERM", $pid
-    Process.wait $pid
-  end
-end
