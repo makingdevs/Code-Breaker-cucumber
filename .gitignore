@@ -1,2 +1,4 @@
 log/*
 **.lock
+passenger.*.pid.lock
+PID.pid
