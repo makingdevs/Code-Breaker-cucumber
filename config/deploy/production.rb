@@ -7,15 +7,16 @@ set :enviroment, 'production'
 namespace :deploy do
   task :start_server do
     on roles(:all) do
-      begin
-        pid = (File.read "#{fetch :deploy_to}/current/PID.pid").to_i
-        Process.kill "TERM", pid
-        Process.wait pid
-        info "****Killed #{fetch :enviroment }****"
-      rescue
-        info "Error killing nginx process, continuing with the task"
+      within "#{fetch :deploy_to }/current/" do
+        begin
+          execute :find, '.', '-name PID.pid'
+          execute :kill, '-TERM', "$(cat PID.pid)"
+        rescue
+          info "**** No previous server server ****"
+        end
+        info "**** Restarting server ****"
+        execute :bundle, "exec rackup -p 9191 -P PID.pid --env #{fetch :enviroment} --daemonize"
       end
-      execute "cd #{fetch :deploy_to }/current && bundle exec rackup -p 9191 --env #{fetch :enviroment} -P PID.pid --daemonize"
     end
   end
 end
