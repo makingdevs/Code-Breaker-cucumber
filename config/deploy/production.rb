@@ -29,7 +29,7 @@ namespace :deploy do
 end
 
 
-after 'deploy:started', 'deploy:stop_server'
+before 'deploy:started', 'deploy:stop_server'
 after 'deploy:published', 'deploy:start_server'
 
 # server-based syntax
