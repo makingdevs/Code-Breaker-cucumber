@@ -5,16 +5,23 @@ set :deploy_to, "/home/ec2-user/prod_code_breaker"
 set :enviroment, 'production'
 
 namespace :deploy do
-  task :start_server do
+  task :stop_server do
     on roles(:all) do
       within "#{fetch :deploy_to }/current/" do
         begin
-          execute :find, '.', '-name PID.pid'
           execute :kill, '-TERM', "$(cat PID.pid)"
+          info "**** App server killed ****"
         rescue
           info "**** No previous server server ****"
         end
-        info "**** Restarting server ****"
+      end
+    end
+  end
+
+  task :start_server do
+    on roles(:all) do
+      within "#{fetch :deploy_to }/current/" do
+        info "**** Starting server ****"
         execute :bundle, "exec rackup -p 9191 -P PID.pid --env #{fetch :enviroment} --daemonize"
       end
     end
@@ -22,7 +29,8 @@ namespace :deploy do
 end
 
 
-after 'deploy:log_revision', 'deploy:start_server'
+after 'deploy:started', 'deploy:stop_server'
+after 'deploy:published', 'deploy:start_server'
 
 # server-based syntax
 # ======================
