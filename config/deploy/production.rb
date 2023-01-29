@@ -2,25 +2,26 @@ server "54.91.116.23", :user => "ec2-user", :roles => %{web app}
 set :branch, "main"
 
 set :deploy_to, "/home/ec2-user/prod_code_breaker"
-set :puerto, '80'
-set :enviroment, 'pro'
+set :enviroment, 'production'
 
 namespace :deploy do
-  task :start_passenger do
+  task :start_server do
     on roles(:all) do
       begin
-        execute "pkill nginx"
-        info "Killed***********************"
+        pid = (File.read "#{fetch :deploy_to}/current/PID.pid").to_i
+        Process.kill "TERM", pid
+        Process.wait pid
+        info "****Killed #{fetch :enviroment }****"
       rescue
         info "Error killing nginx process, continuing with the task"
       end
-      execute "cd #{fetch :deploy_to }/current && bundle exec passenger start -p #{fetch :puerto} --daemonize"
+      execute "cd #{fetch :deploy_to }/current && bundle exec rackup -p 9191 --env #{fetch :enviroment} -P PID.pid --daemonize"
     end
   end
 end
 
 
-after 'deploy:log_revision', 'deploy:start_passenger'
+after 'deploy:log_revision', 'deploy:start_server'
 
 # server-based syntax
 # ======================
