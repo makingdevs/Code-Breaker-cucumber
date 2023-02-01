@@ -1,9 +1,12 @@
 Feature: Code Breaker Game
   Guess the number in the game
 
-  Scenario: Start a game
+  Background: Start a game
     Starting a game for guessing a number
     When I navigate to "localhost:4567"
+    Then I should see page title as "Type your name"
+    Then I enter "Hector" into input field having id "name"
+    When I click on element having id "name_register"
     Then I should see page title as "CodeBreaker Game"
     Then element having id "input" should be present
     Then element having id "guess" should be present
