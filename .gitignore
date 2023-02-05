@@ -1,4 +1,4 @@
 log/*
 **.lock
 passenger.*.pid.lock
-PID.pid
+resources/players_data.csv
