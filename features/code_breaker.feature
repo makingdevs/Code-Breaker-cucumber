@@ -17,11 +17,11 @@ Feature: Code Breaker Game
     Then element having id "output" should have text as "___"
     And element having id "message" should have text as "Try again!"
 
-  Scenario: Guess the right number
+  Scenario: Guess the right number on the first try
     Given I enter "7519" into input field having id "input"
     When I click on element having id "guess"
     Then element having id "output" should have text as "____"
-    And element having id "message" should have text as "You win!"
+    And element having id "message" should have text as "You win! and your score is 10"
 
 
   Scenario: List of numbers guessed
