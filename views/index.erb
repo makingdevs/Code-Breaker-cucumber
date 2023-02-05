@@ -15,7 +15,7 @@
   <% if @results %>
     <p id="output"><%= @guess %></p>
     <% if @win %>
-      <p id="message">You win!</p>
+      <p id="message">You win! and your score is <%= @attemps + 1 %></p>
     <% else %>
       <p id="message"><%= @attemps >= 1 ? 'Try again!' : 'Game Over!' %></p>
     <% end %>
