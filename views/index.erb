@@ -25,6 +25,23 @@
     <% end %>
     </ul>
   <% end %>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Top 10 players</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do |row| %>
+      <tr>
+        <td><%= row[0] %></td>
+        <td><%= row[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 </body>
 </html>
 
