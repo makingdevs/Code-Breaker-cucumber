@@ -24,6 +24,10 @@ class MyApp < Sinatra::Base
       @win = result[:win] unless result.nil?
       @attemps = result[:attemps] unless result.nil?
       @name = session[:name]
+      @data = []
+      CSV.foreach('resources/players_data.csv') do |row|
+        @data << row
+      end
       erb :index
     end
   end
