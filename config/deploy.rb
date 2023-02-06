@@ -1,21 +1,12 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
-set :passenger_roles => %{web app}
-set :passenger_restart_runner, :sequence
-set :passenger_restart_wait, 5
-set :passenger_restart_limit, 2
-set :passenger_restart_with_sudo, false
-set :passenger_environment_variables, {}
-set :passenger_restart_command, 'passenger-config restart-app'
-set :passenger_restart_options, -> { "#{deploy_to} --ignore-app-not-running" }
 set :application, "code_breaker"
 set :repo_url, "git@github.com:makingdevs/Code-Breaker-cucumber.git"
 set :ssh_options, { :forward_agent => true }
 set :default_env, { path: "~/.asdf/shims:~/.asdf/bin:$PATH" }
 
 
-set :passenger_restart_command, 'passenger:restart'
 
 # namespace :deploy do
 #   task :restart do
