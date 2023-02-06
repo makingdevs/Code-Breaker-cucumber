@@ -2,15 +2,17 @@ require 'sinatra'
 require_relative 'lib/code_breaker.rb'
 require 'csv'
 
-before do 
-  unless File.exist?('players_data.csv')
-    CSV.open('players_data.csv', 'w') do |csv|
-      csv << ['Name', 'Score']
-    end
-  end
-end
+
 
 class MyApp < Sinatra::Base
+  before do
+  puts "**SIJALA" 
+    unless File.exist?('resources/players_data.csv')
+      CSV.open('resources/players_data.csv', 'w') do |csv|
+        csv << ['Name', 'Score']
+      end
+    end
+  end
   enable :sessions
   get '/' do
     if session[:name].nil?
@@ -44,6 +46,11 @@ class MyApp < Sinatra::Base
         :attemps => play.attemps
       }
       session[:result] = result
+      if play.win 
+        CSV.open('resources/players_data.csv', 'a') do |csv|
+          csv << [session[:name], play.attemps + 1]
+        end
+      end
       redirect '/'
     end
   end
