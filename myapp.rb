@@ -1,5 +1,14 @@
 require 'sinatra'
 require_relative 'lib/code_breaker.rb'
+require 'csv'
+
+before do 
+  unless File.exist?('players_data.csv')
+    CSV.open('players_data.csv', 'w') do |csv|
+      csv << ['Name', 'Score']
+    end
+  end
+end
 
 class MyApp < Sinatra::Base
   enable :sessions
