@@ -28,6 +28,7 @@ class MyApp < Sinatra::Base
       CSV.foreach('resources/players_data.csv') do |row|
         @data << row
       end
+      @data = @data.sort_by {|row| row[1].to_i }.reverse.first(10)
       erb :index
     end
   end
