@@ -11,5 +11,4 @@ class CodeTable
       File.open('resources/players_data.csv', 'w') {|file| file.truncate(0)}
     end
   end
-  
 end
