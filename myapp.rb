@@ -14,7 +14,12 @@ class MyApp < Sinatra::Base
       @win = result[:win] unless result.nil?
       @attemps = result[:attemps] unless result.nil?
       @name = session[:name]
-      @data = []      
+      @data = []
+      if File.exists?('resources/players_data.csv')
+        CSV.foreach('resources/players_data.csv') do |row|
+          @data << row
+        end
+      end
       @data = @data.sort_by {|row| row[1].to_i }.reverse.first(10)
       erb :index
     end
