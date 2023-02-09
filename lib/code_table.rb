@@ -7,8 +7,16 @@ class CodeTable
   end
 
   def self.prepare_file
-    unless File.exists?('resources/players_data.csv')
-      File.open('resources/players_data.csv', 'w') {|file| file.truncate(0)}
+    directory = 'resources'
+    file_path = File.join(directory, 'players_data.csv')
+
+    unless File.directory?(directory)
+      Dir.mkdir(directory)
+    end
+
+    unless File.exists?(file_path)
+      File.open(file_path, 'w') {|file| file.truncate(0)}
     end
   end
+
 end
