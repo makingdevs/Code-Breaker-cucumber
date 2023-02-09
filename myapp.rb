@@ -1,18 +1,8 @@
 require 'sinatra'
 require_relative 'lib/code_breaker.rb'
+require_relative 'lib/code_table.rb'
 require 'csv'
-
-
-
 class MyApp < Sinatra::Base
-  before do
-  puts "**SIJALA" 
-    unless File.exist?('resources/players_data.csv')
-      CSV.open('resources/players_data.csv', 'w') do |csv|
-        csv << ['Name', 'Score']
-      end
-    end
-  end
   enable :sessions
   get '/' do
     if session[:name].nil?
@@ -24,10 +14,7 @@ class MyApp < Sinatra::Base
       @win = result[:win] unless result.nil?
       @attemps = result[:attemps] unless result.nil?
       @name = session[:name]
-      @data = []
-      CSV.foreach('resources/players_data.csv') do |row|
-        @data << row
-      end
+      @data = []      
       @data = @data.sort_by {|row| row[1].to_i }.reverse.first(10)
       erb :index
     end
@@ -52,10 +39,9 @@ class MyApp < Sinatra::Base
       }
       session[:result] = result
       if play.win 
-        CSV.open('resources/players_data.csv', 'a') do |csv|
-          csv << [session[:name], play.attemps + 1]
-        end
-      end
+        CodeTable.prepare_file
+        CodeTable.write_data(session[:name], play.attemps + 1)
+      end       
       redirect '/'
     end
   end
