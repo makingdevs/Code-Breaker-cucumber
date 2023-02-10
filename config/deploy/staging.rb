@@ -22,7 +22,7 @@ namespace :deploy do
     on roles(:all) do
       within "#{fetch :deploy_to }/current/" do
         info "**** Starting server ****"
-        execute :sudo, "-u ec2-user bundle exec rackup -p 9292 -P PID.pid --env #{fetch :enviroment} --daemonize "
+        execute :bundle, "sudo -u ec2-user exec rackup -p 9292 -P PID.pid --env #{fetch :enviroment} --daemonize "
       end
     end
   end
