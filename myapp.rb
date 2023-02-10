@@ -44,8 +44,21 @@ class MyApp < Sinatra::Base
       }
       session[:result] = result
       if play.win 
-        CodeTable.prepare_file
-        CodeTable.write_data(session[:name], play.attemps + 1)
+        directory = 'resources'
+        file_path = File.join(directory, 'players_data.csv')
+
+        unless File.directory?(directory)
+          Dir.mkdir(directory)
+        end
+
+        unless File.exists?(file_path)
+          File.open(file_path, 'w') {|file| file.truncate(0)}
+        end
+        CSV.open('resources/players_data.csv', 'a') do |csv|
+          csv << [session[:name], play.attemps + 1]
+
+        end
+        
       end       
       redirect '/'
     end
