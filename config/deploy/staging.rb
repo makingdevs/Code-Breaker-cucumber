@@ -22,7 +22,7 @@ namespace :deploy do
     on roles(:all) do
       within "#{fetch :deploy_to }/current/" do
         info "**** Starting server ****"
-        execute :bundle, "exec rackup --daemonize -p 9292 -P PID.pid --chdir #{fetch :deploy_to} --env #{fetch :enviroment}"
+        execute :bundle, "exec rackup --daemonize -p 9292 -P PID.pid --chdir #{fetch :deploy_to} --root #{fetch :enviroment}"
       end
     end
   end
