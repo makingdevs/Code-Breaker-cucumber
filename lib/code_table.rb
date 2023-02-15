@@ -1,13 +1,13 @@
 require 'csv'
 class CodeTable 
   def self.write_data(player_name, score)
-    CSV.open('resources/players_data.csv', 'a') do |csv|
+    CSV.open(File.expand_path('~/.resources/players_data.csv'), 'a') do |csv|
       csv << [player_name, score.to_i]
     end
   end
 
   def self.prepare_file
-    directory = 'resources'
+    directory = File.expand_path('~/.resources')
     file_path = File.join(directory, 'players_data.csv')
 
     unless File.directory?(directory)
