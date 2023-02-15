@@ -6,13 +6,15 @@ describe CodeTable do
 	let(:score) {10}
 	
 	context 'Creating file if no exisitng' do 
-		before do  
-			File.delete('resources/players_data.csv') if File.exists?('resources/players_data.csv')			
+		before do
+			file_path = File.expand_path("~/.resources/players_data.csv")
+			File.delete(file_path) if File.exists?(file_path)			
 		end
-		it 'makes sure a file is going to be created' do 
-			expect(File.exists?('resources/players_data.csv')).to be false
+		it 'makes sure a file is going to be created' do
+			file_path = File.expand_path("~/.resources/players_data.csv")
+			expect(File.exists?(file_path)).to be false
 			CodeTable.prepare_file
-			expect(File.exists?('resources/players_data.csv')).to be true
+			expect(File.exists?(file_path)).to be true
 		end
 	end
 
@@ -24,7 +26,7 @@ describe CodeTable do
 		end
 
 		it 'writes Hector as the player and 10 as the score' do
-			file = CSV.read('resources/players_data.csv')
+			file = CSV.read(File.expand_path('~/.resources/players_data.csv'))
 			last_row = file.last
 			expect(last_row[0]).to eq('Hector')
 			expect(last_row[1]).to eq('10')
