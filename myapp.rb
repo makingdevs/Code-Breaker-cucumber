@@ -15,8 +15,9 @@ class MyApp < Sinatra::Base
       @attemps = result[:attemps] unless result.nil?
       @name = session[:name]
       @data = []
-      if File.exists?('resources/players_data.csv')
-        CSV.foreach('resources/players_data.csv') do |row|
+      file = File.expand_path('resources/players_data.csv', '.')
+      if File.exists?(file)
+        CSV.foreach(file) do |row|
           @data << row
         end
       end
@@ -44,9 +45,23 @@ class MyApp < Sinatra::Base
       }
       session[:result] = result
       if play.win 
-        CodeTable.prepare_file
-        CodeTable.write_data(session[:name], play.attemps + 1)
-      end       
+        directory = File.expand_path('.').concat('/resources')
+        unless File.directory?(directory)
+          Dir.mkdir(directory)
+        end
+
+        file = File.expand_path('resources/', '.').concat('/players_data.csv')
+        unless File.exists?(file)
+          File.open(file, 'w') {}
+        end
+
+        file = File.expand_path('resources/', '.').concat('/players_data.csv')
+        player_name = session[:name]
+        score = play.attemps + 1
+        CSV.open(file, 'a') do |csv|
+          csv << [player_name, score.to_i]
+        end
+      end
       redirect '/'
     end
   end
