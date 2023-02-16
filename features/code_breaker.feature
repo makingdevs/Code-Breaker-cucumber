@@ -56,3 +56,4 @@ Feature: Code Breaker Game
     Given I enter "1094" into input field having id "input"
     When I click on element having id "guess"
     And element having id "message" should have text as "Game Over!"
+    Then element having id "try_again" should be present
