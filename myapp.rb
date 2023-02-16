@@ -22,6 +22,8 @@ class MyApp < Sinatra::Base
         end
       end
       @data = @data.sort_by {|row| row[1].to_i }.reverse.first(10)
+      @message = session[:message]
+      session[:message] = nil
       erb :index
     end
   end
@@ -36,17 +38,21 @@ class MyApp < Sinatra::Base
       guess = play.try(params[:guess])
       win = play.win
       result = session[:result] ? session[:result] : []
-      result << {
-        :guess => guess,
-        :attemp => params[:guess],
-        :win => win,
-        :attemps => play.attemps
-      }
-      session[:result] = result
-      if play.win 
-        CodeTable.prepare_file
-        CodeTable.write_data(session[:name], play.attemps + 1)
-      
+      unless result.none? {|r| r[:attemp] == params[:guess]}
+        session[:message] =  "You already tried #{params[:guess]}, try something else"
+        redirect '/'
+      else
+        result << {
+          :guess => guess,
+          :attemp => params[:guess],
+          :win => win,
+          :attemps => play.attemps
+        }
+        session[:result] = result
+        if play.win 
+          CodeTable.prepare_file
+          CodeTable.write_data(session[:name], play.attemps + 1)
+        end      
       end
       redirect '/'
     end
