@@ -13,6 +13,12 @@
     <input type="text" id="input" name="guess" autofocus><br>
     <input type="submit" id="guess" value="Guess">
   </form>
+  <% if @message %>
+  <div id="repeated_number">
+    <%= @message %>
+  </div>
+  <% end %>
+
   <% if @win == false && @attemps == 0 %>
   <form action="/try_again" method="get">
     <button type="submit" id="try_again" class="btn btn-primary">Try Again</button>
