@@ -1,7 +1,21 @@
-<h1>Welcome to Code Breaker</h1>
+<div class="container mt-4">
 
-<form action="/" method="post">
-  <label for="name">Enter your name:</label> <br><br>
-  <input type="text" id="name" name="name" required autofocus>
-  <input type="submit" id="name_register" value="Submit">
-</form>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Welcome to Code Breaker</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 class="text-center mb-4">What's your name?</h3>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <label for="nameInput">Name:</label>
+          <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter your name" required autofocus>
+        </div>
+        <button type="submit" class="btn btn-primary" id="name_register">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
