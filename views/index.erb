@@ -1,65 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>CodeBreaker Game</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-  <h1>Stage</h1>
-  <h2>Welcome <%= @name %></h2>
-  <form action="/" method="POST">
-    <label for="guess">Enter your guess:</label><br>
-    <input type="text" id="input" name="guess" autofocus><br>
-    <input type="submit" id="guess" value="Guess">
-  </form>
-  <% if @message %>
-  <div id="repeated_number">
-    <%= @message %>
+<h1>Stage</h1>
+<h2>Welcome <%= @name %></h2>
+
+<div class="row">
+  <div class="col-sm-6 bg-primary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 mt-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Enter OTP-4 Pin Code</h5>
+              <form class="row g-3" action="/" method="POST">
+                <div class="col-3">
+                  <input type="text" class="form-control text-center" maxlength="1" pattern="\d" required name="g1">
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control text-center" maxlength="1" pattern="\d" required name="g2">
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control text-center" maxlength="1" pattern="\d" required name="g3">
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control text-center" maxlength="1" pattern="\d" required name="g4">
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary w-100" id="guess">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if @message %>
+    <div id="repeated_number">
+      <%= @message %>
+    </div>
+    <% end %>
+
+    <% if @win == false && @attemps == 0 %>
+    <form action="/try_again" method="get">
+      <button type="submit" id="try_again" class="btn btn-primary">Try Again</button>
+    </form>
+    <% end %>
+
+    <% if @results %>
+      <p id="output"><%= @guess %></p>
+      <% if @win %>
+        <p id="message">You win! and your score is <%= @attemps + 1 %></p>
+      <% else %>
+        <p id="message"><%= @attemps >= 1 ? 'Try again!' : 'Game Over!' %></p>
+      <% end %>
+      <ul id="results">
+      <% @results.each do |result|%>
+        <li><%= "#{result[:attemp]} - #{result[:guess]}" %></li>
+      <% end %>
+      </ul>
+    <% end %>
   </div>
-  <% end %>
 
-  <% if @win == false && @attemps == 0 %>
-  <form action="/try_again" method="get">
-    <button type="submit" id="try_again" class="btn btn-primary">Try Again</button>
-  </form>
-<% end %>
-
-  <% if @results %>
-    <p id="output"><%= @guess %></p>
-    <% if @win %>
-      <p id="message">You win! and your score is <%= @attemps + 1 %></p>
-    <% else %>
-      <p id="message"><%= @attemps >= 1 ? 'Try again!' : 'Game Over!' %></p>
-    <% end %>
-    <ul id="results">
-    <% @results.each do |result|%>
-      <li><%= "#{result[:attemp]} - #{result[:guess]}" %></li>
-    <% end %>
-    </ul>
-  <% end %>
-
-  <table>
-  <thead>
-    <tr>
-      <th>Top 10 players</th>      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Name</td>
-      <td>Score</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <% @data.each do |row| %>
+  <div class="col-sm-6 bg-primary">
+    <table>
+    <thead>
       <tr>
-        <td><%= row[0] %></td>
-        <td><%= row[1] %></td>
+        <th>Top 10 players</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-</body>
-</html>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>Score</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <% @data.each do |row| %>
+        <tr>
+          <td><%= row[0] %></td>
+          <td><%= row[1] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
 
+  </div>
+</div>

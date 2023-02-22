@@ -32,9 +32,10 @@ class MyApp < Sinatra::Base
     if session[:name].nil?
       session[:name] = params[:name]
       redirect '/'
-    else     
+    else
       play = CodeBreaker.new("7519")
       play.attemps = session[:result].last[:attemps] if session[:result]
+      params[:guess] = params[:g1] + params[:g2] + params[:g3] + params[:g4]
       guess = play.try(params[:guess])
       win = play.win
       result = session[:result] ? session[:result] : []
@@ -49,19 +50,29 @@ class MyApp < Sinatra::Base
           :attemps => play.attemps
         }
         session[:result] = result
-        if play.win 
+        if play.win
           CodeTable.prepare_file
           CodeTable.write_data(session[:name], play.attemps + 1)
-        end      
+        end
       end
       redirect '/'
     end
   end
 
   get '/try_again' do
-  session[:result] = nil  # clear session variable
-  redirect '/'
-end
-  
+    session[:result] = nil  # clear session variable
+    redirect '/'
+  end
+
+  get '/styles.css' do
+    content_type 'text/css'
+    send_file 'public/styles.css'
+  end
+
+  get '/script.js' do
+    content_type 'application/javascript'
+    send_file 'public/script.js'
+  end
+
   run! if app_file == $0
 end
